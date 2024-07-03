@@ -4,7 +4,7 @@ title:  "Welcome to Jekyll!"
 date:   2024-06-24 17:32:50 +0900
 categories: jekyll update
 ---
-뭐가 뭔지 하나도 모르겠드아아아악.
+뭐가 뭔지 하나도 모르겠드아아아악. zzzzzxxx
 
 Jekyll requires blog post files to be named according to the following format:
 
