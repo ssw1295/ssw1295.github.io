@@ -9,7 +9,7 @@ module.exports = function override(config, env) {
       compiler.hooks.done.tap('MoveAndRenameIndexHtml', (stats) => {
       console.log('done hook activated!')
 
-        const buildDir = path.resolve(__dirname, '../jekyll/react-build')
+        const buildDir = path.resolve(__dirname, '../jekyll/react_build')
         const targetDir = path.resolve(__dirname, '../jekyll/_includes')
 
         if (!fs.existsSync(targetDir)) {

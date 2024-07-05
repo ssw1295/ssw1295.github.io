@@ -10,9 +10,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'], // 파일 확장자 처리
   },
   output: {
-    path: path.resolve(__dirname, '../jekyll/react-build'),
+    path: path.resolve(__dirname, '../jekyll/react_build'),
     filename: '[name].[contenthash].js',
-    publicPath: '/react-build/',
+    publicPath: '/react_build/',
   },
   module: {
     rules: [
@@ -45,7 +45,7 @@ module.exports = {
       events: {
         onEnd: {
           copy: [
-            { source: '../jekyll/react-build/index.html', destination: path.resolve(__dirname, '../jekyll/_includes/react-index.html') },
+            { source: '../jekyll/react_build/index.html', destination: path.resolve(__dirname, '../jekyll/_includes/react-index.html') },
           ],
         },
       },

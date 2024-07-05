@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/react-build/",
+  "homepage": "/react_build/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env BUILD_PATH='../jekyll/react-build' react-app-rewired build",
+    "build": "cross-env BUILD_PATH='../jekyll/react_build' react-app-rewired build",
     "watch-build": "webpack --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

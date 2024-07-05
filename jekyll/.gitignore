@@ -3,6 +3,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-react-build
+react_build
 
 # 임시
