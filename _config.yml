@@ -77,7 +77,12 @@ minima:
 collections_dir: my_collections
 
 collections:
-  seo:
+  post:
     output: true
     # permalink: /:collection/:name
     permalink: /:collection/:path
+
+
+url: "https://ssw1295.github.io/" # the base hostname & protocol for your site
+plugins:
+  - jekyll-sitemap
