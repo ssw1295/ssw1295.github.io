@@ -2,7 +2,7 @@ source: ./jekyll
 exclude:
   - "react"
 
-layouts_dir: ./jekyll/_layouts
+layouts_dir: jekyll/_layouts
 
 collections_dir: ./jekyll/my_collections
 
