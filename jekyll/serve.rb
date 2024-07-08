@@ -1,1 +1,0 @@
-system("bundle exec jekyll serve --livereload")
