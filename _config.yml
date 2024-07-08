@@ -1,3 +1,11 @@
 source: ./jekyll
 exclude:
   - "react"
+
+collections_dir: my_collections
+
+collections:
+  post:
+    output: true
+    # permalink: /:collection/:name
+    permalink: /:collection/:path
