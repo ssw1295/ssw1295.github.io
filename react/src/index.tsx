@@ -1,22 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+
+import App from './pages/App/index'
+
 import './index.css'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
 
 
+const rootDiv = document.getElementById('root')
+if (!rootDiv) {
+  throw new Error('no root element')
+}
+const childDiv = rootDiv.firstElementChild
+// sd
 
-const root = ReactDOM.createRoot(document.getElementById('root')!)
+const root = ReactDOM.createRoot(rootDiv)
+
 root.render(
   <React.StrictMode>
-    <div>
-      <h1>안녕하시기!</h1>
-    </div>
-    <App />
+    <App
+      children={
+        childDiv
+      }
+    >
+    </App>
   </React.StrictMode>
 )
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
