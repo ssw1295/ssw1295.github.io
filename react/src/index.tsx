@@ -11,7 +11,6 @@ if (!rootDiv) {
   throw new Error('no root element')
 }
 const childDiv = rootDiv.firstElementChild
-// sd
 
 const root = ReactDOM.createRoot(rootDiv)
 
