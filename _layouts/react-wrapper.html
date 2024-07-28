@@ -2,7 +2,7 @@
 ---
 
 <div id="root">
-  <div id="hidden-content">
+  <div id="content">
     {{ content }}
   </div>
 </div>
@@ -10,7 +10,12 @@
 {% include react-index.html %}
 
 <style>
-  #hidden-content {
+  /* id root 바로 밑  id content는 가리기 */
+  #root > #content {
     display: none;
   }
+
+  /* #hidden-content {
+    display: none;
+  } */
 </style>
