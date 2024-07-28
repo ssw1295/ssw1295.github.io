@@ -2,9 +2,15 @@
 ---
 
 <div id="root">
-  <div id="contentRef">
+  <div id="hidden-content">
     {{ content }}
   </div>
 </div>
 
 {% include react-index.html %}
+
+<style>
+  #hidden-content {
+    display: none;
+  }
+</style>

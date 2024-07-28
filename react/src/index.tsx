@@ -6,19 +6,20 @@ import App from './pages/App/index'
 import './index.css'
 
 
-const rootDiv = document.getElementById('root')
-if (!rootDiv) {
+const rootEl = document.getElementById('root')
+if (!rootEl) {
   throw new Error('no root element')
 }
-const childDiv = rootDiv.firstElementChild
 
-const root = ReactDOM.createRoot(rootDiv)
+const rootInnerContentEl = rootEl.firstElementChild
+
+const root = ReactDOM.createRoot(rootEl)
 
 root.render(
   <React.StrictMode>
     <App
-      children={
-        childDiv
+      content={
+        rootInnerContentEl
       }
     >
     </App>
