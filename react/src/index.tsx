@@ -1,27 +1,52 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import _ from 'lodash'
 
-import App from './pages/App/index'
+import Main from './pages/Main/index'
+import Post from './pages/Post/index'
 
 import './index.css'
 
+type ValidRouteBase = '' | 'post'
+
+
+const routeBase = _.split(window.location.pathname, '/')[1] as ValidRouteBase
+if (!_.includes([
+  '',
+  'post',
+] as ValidRouteBase[], routeBase)) {
+  throw new Error('invalid route for render react app')
+}
 
 const rootEl = document.getElementById('root')
 if (!rootEl) {
-  throw new Error('no root element')
+  throw new Error('no root element for render react app')
 }
 
-const rootInnerContentEl = rootEl.firstElementChild
 
-const root = ReactDOM.createRoot(rootEl)
+const jsxEls: {
+  [routeBase: string]: () => JSX.Element
+} = {
+  '': () => {
+    return <Main />
+  },
+  'post': () => {
+    const rootInnerContentEl = rootEl.firstElementChild
+    if (!rootInnerContentEl) {
+      throw new Error('no content element for post page')
+    }
 
-root.render(
+    return <Post
+      content={ rootInnerContentEl }
+    />
+  },
+}
+
+
+const jsxEl = jsxEls[routeBase]()
+
+ReactDOM.createRoot(rootEl).render(
   <React.StrictMode>
-    <App
-      content={
-        rootInnerContentEl
-      }
-    >
-    </App>
+    { jsxEl }
   </React.StrictMode>
 )
