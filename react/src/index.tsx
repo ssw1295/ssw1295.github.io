@@ -31,13 +31,13 @@ const jsxEls: {
     return <Main />
   },
   'post': () => {
-    const rootInnerContentEl = rootEl.firstElementChild
-    if (!rootInnerContentEl) {
+    const postContentEl = rootEl.querySelector('#content')
+    if (!postContentEl) {
       throw new Error('no content element for post page')
     }
 
     return <Post
-      content={ rootInnerContentEl }
+      content={ postContentEl }
     />
   },
 }
