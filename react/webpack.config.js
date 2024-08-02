@@ -13,6 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, '../react_build'),
     filename: '[name].[contenthash].js',
     publicPath: '/react_build/',
+    clean: true,
   },
   module: {
     rules: [
