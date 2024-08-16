@@ -1,7 +1,4 @@
 ---
-layout: post
-date: 2024-07-01 10:00:00 +0000
-last_modified_at: 2024-07-05 15:00:00 +0000
 ---
 Paragraphs are separated by a blank line.
 
@@ -63,7 +60,9 @@ for i in range(10):
     print i
 ~~~
 
+<img src="_assets/bar/2024-08-16-16-43-23.png" width="75%" />
 
+나는 이것에 대해 크게 혼동할 수 밖에 없었다..
 
 ### An h3 header ###
 

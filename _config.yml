@@ -82,10 +82,16 @@ minima:
 collections_dir: collections
 
 collections:
-  post:
+  entry:
     output: true
-    # permalink: /:collection/:name
     permalink: /:collection/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: "entry"
+    values:
+      layout: "entry"
 
 
 url: "https://ssw1295.github.io/" # the base hostname & protocol for your site

@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
 import Main from './pages/Main/index'
-import Post from './pages/Post/index'
+import Entry from './pages/Entry/index'
 
 import './index.css'
 
-type ValidRouteBase = '' | 'post'
+type ValidRouteBase = '' | 'entry'
+const VALID_ROUTE_BASES: ValidRouteBase[] = [
+  '',
+  'entry',
+]
 
 
 const routeBase = _.split(window.location.pathname, '/')[1] as ValidRouteBase
-if (!_.includes([
-  '',
-  'post',
-] as ValidRouteBase[], routeBase)) {
+if (!_.includes(VALID_ROUTE_BASES, routeBase)) {
   throw new Error('invalid route for render react app')
 }
 
@@ -25,19 +26,19 @@ if (!rootEl) {
 
 
 const jsxEls: {
-  [routeBase: string]: () => JSX.Element
+  [keys in ValidRouteBase]: () => JSX.Element
 } = {
   '': () => {
     return <Main />
   },
-  'post': () => {
-    const postContentEl = rootEl.querySelector('#content')
-    if (!postContentEl) {
-      throw new Error('no content element for post page')
+  'entry': () => {
+    const entryContentEl = rootEl.querySelector('#content')
+    if (!entryContentEl) {
+      throw new Error('no content element for entry page')
     }
 
-    return <Post
-      content={ postContentEl }
+    return <Entry
+      content={ entryContentEl }
     />
   },
 }
