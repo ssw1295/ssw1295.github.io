@@ -2,6 +2,24 @@ import './index.css'
 
 import cat from './cat.png'
 
+fetch('/entities.json', {
+  method: 'GET',
+}).then(async (response) => {
+  const text = await response.text()
+  console.log({
+    text,
+  })
+  // 모든 “ 혹은 ”를 "로 바꾸기
+  const newText = text.replace(/“|”/g, '"')
+  console.log({
+    newText,
+  })
+  const parsed = JSON.parse(newText)
+  console.log({
+    parsed,
+  })
+})
+
 export default ({
   content,
 }: {
