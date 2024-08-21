@@ -1,7 +1,15 @@
-export default ({
+import {
+  Post,
+} from 'types/post'
 
-}) => (
-  <div>
-    hello main
-  </div>
-)
+export default ({
+  entryPosts,
+}: {
+  entryPosts: Post[]
+}) => {
+  return <>
+    <div>
+      hello main
+    </div>
+  </>
+}

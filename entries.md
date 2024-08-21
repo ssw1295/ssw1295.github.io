@@ -1,6 +1,6 @@
 ---
 layout: json
-permalink: /entities.json
+permalink: /entries.json
 ---
 [
 {% for item in site.entry %}

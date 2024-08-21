@@ -5,6 +5,10 @@ import _ from 'lodash'
 import Main from './pages/Main/index'
 import Entry from './pages/Entry/index'
 
+import {
+  Post,
+} from 'types/post'
+
 import './index.css'
 
 type ValidRouteBase = '' | 'entry'
@@ -25,11 +29,37 @@ if (!rootEl) {
 }
 
 
+const entries = await fetch('/entries.json', {
+  method: 'GET',
+})
+const jsonText = await entries.text()
+const validJsonText = jsonText.replace(/“|”/g, '"')
+const parsedEntriesJson: {url: string}[] = JSON.parse(validJsonText)
+
+const entryPosts: Post[] = _.map(parsedEntriesJson, json => {
+  const url = decodeURIComponent(json.url)
+  const urlParts = _.split(url, '/')
+  urlParts.shift()
+  const depth = urlParts.length
+  const parent = urlParts[(urlParts.length - 1) - 1] ?? null
+
+  return {
+    url,
+    parent,
+    depth,
+  }
+})
+
+console.log({entryPosts})
+
+
 const jsxEls: {
   [keys in ValidRouteBase]: () => JSX.Element
 } = {
   '': () => {
-    return <Main />
+    return <Main
+      entryPosts={ entryPosts }
+    />
   },
   'entry': () => {
     const entryContentEl = rootEl.querySelector('#content')
@@ -43,6 +73,7 @@ const jsxEls: {
   },
 }
 
+// 메인 공통 레퍼 생성 후 감싸서 리턴?
 
 const jsxEl = jsxEls[routeBase]()
 

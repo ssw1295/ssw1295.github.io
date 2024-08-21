@@ -13,10 +13,10 @@
 /*!***********************!*\
   !*** ./src/index.tsx ***!
   \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _pages_Main_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Main/index */ \"./src/pages/Main/index.tsx\");\n/* harmony import */ var _pages_Entry_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Entry/index */ \"./src/pages/Entry/index.tsx\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n\n\n\n\n\n\nconst VALID_ROUTE_BASES = ['', 'entry'];\nconst routeBase = lodash__WEBPACK_IMPORTED_MODULE_2___default().split(window.location.pathname, '/')[1];\nif (!lodash__WEBPACK_IMPORTED_MODULE_2___default().includes(VALID_ROUTE_BASES, routeBase)) {\n  throw new Error('invalid route for render react app');\n}\nconst rootEl = document.getElementById('root');\nif (!rootEl) {\n  throw new Error('no root element for render react app');\n}\nconst jsxEls = {\n  '': () => {\n    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Main_index__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {});\n  },\n  'entry': () => {\n    const entryContentEl = rootEl.querySelector('#content');\n    if (!entryContentEl) {\n      throw new Error('no content element for entry page');\n    }\n    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Entry_index__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {\n      content: entryContentEl\n    });\n  }\n};\nconst jsxEl = jsxEls[routeBase]();\nreact_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(rootEl).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {\n  children: jsxEl\n}));\n\n//# sourceURL=webpack://my-app/./src/index.tsx?");
+eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _pages_Main_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Main/index */ \"./src/pages/Main/index.tsx\");\n/* harmony import */ var _pages_Entry_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Entry/index */ \"./src/pages/Entry/index.tsx\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n\n\n\n\n\n\nconst VALID_ROUTE_BASES = ['', 'entry'];\nconst routeBase = lodash__WEBPACK_IMPORTED_MODULE_2___default().split(window.location.pathname, '/')[1];\nif (!lodash__WEBPACK_IMPORTED_MODULE_2___default().includes(VALID_ROUTE_BASES, routeBase)) {\n  throw new Error('invalid route for render react app');\n}\nconst rootEl = document.getElementById('root');\nif (!rootEl) {\n  throw new Error('no root element for render react app');\n}\nconst entries = await fetch('/entries.json', {\n  method: 'GET'\n});\nconst jsonText = await entries.text();\nconst validJsonText = jsonText.replace(/“|”/g, '\"');\nconst parsedEntriesJson = JSON.parse(validJsonText);\nconst entryPosts = lodash__WEBPACK_IMPORTED_MODULE_2___default().map(parsedEntriesJson, json => {\n  var _urlParts;\n  const url = decodeURIComponent(json.url);\n  const urlParts = lodash__WEBPACK_IMPORTED_MODULE_2___default().split(url, '/');\n  urlParts.shift();\n  const depth = urlParts.length;\n  const parent = (_urlParts = urlParts[urlParts.length - 1 - 1]) !== null && _urlParts !== void 0 ? _urlParts : null;\n  return {\n    url,\n    parent,\n    depth\n  };\n});\nconsole.log({\n  entryPosts\n});\nconst jsxEls = {\n  '': () => {\n    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Main_index__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n      entryPosts: entryPosts\n    });\n  },\n  'entry': () => {\n    const entryContentEl = rootEl.querySelector('#content');\n    if (!entryContentEl) {\n      throw new Error('no content element for entry page');\n    }\n    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Entry_index__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {\n      content: entryContentEl\n    });\n  }\n};\n\n// 메인 공통 레퍼 생성 후 감싸서 리턴?\n\nconst jsxEl = jsxEls[routeBase]();\nreact_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(rootEl).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {\n  children: jsxEl\n}));\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://my-app/./src/index.tsx?");
 
 /***/ }),
 
@@ -27,7 +27,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/pages/Entry/index.css\");\n/* harmony import */ var _cat_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cat.png */ \"./src/pages/Entry/cat.png\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n\n\nfetch('/entities.json', {\n  method: 'GET'\n}).then(async response => {\n  const text = await response.text();\n  console.log({\n    text\n  });\n  // 모든 “ 혹은 ”를 \"로 바꾸기\n  const newText = text.replace(/“|”/g, '\"');\n  console.log({\n    newText\n  });\n  const parsed = JSON.parse(newText);\n  console.log({\n    parsed\n  });\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {\n  let {\n    content\n  } = _ref;\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(\"div\", {\n    className: \"App\",\n    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {\n      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"div\", {\n        dangerouslySetInnerHTML: {\n          __html: content.outerHTML\n        }\n      })\n    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(\"header\", {\n      className: \"App-header\",\n      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"img\", {\n        src: _cat_png__WEBPACK_IMPORTED_MODULE_1__\n      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(\"p\", {\n        children: [\"Edit \", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"code\", {\n          children: \"src/App.js\"\n        }), \" and save to reload. This is a test.\"]\n      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"a\", {\n        className: \"App-link\",\n        href: \"https://reactjs.org\",\n        target: \"_blank\",\n        rel: \"noopener noreferrer\",\n        children: \"Learn React\"\n      })]\n    })]\n  });\n});\n\n//# sourceURL=webpack://my-app/./src/pages/Entry/index.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/pages/Entry/index.css\");\n/* harmony import */ var _cat_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cat.png */ \"./src/pages/Entry/cat.png\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {\n  let {\n    content\n  } = _ref;\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(\"div\", {\n    className: \"App\",\n    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {\n      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"div\", {\n        dangerouslySetInnerHTML: {\n          __html: content.outerHTML\n        }\n      })\n    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(\"header\", {\n      className: \"App-header\",\n      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"img\", {\n        src: _cat_png__WEBPACK_IMPORTED_MODULE_1__\n      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(\"p\", {\n        children: [\"Edit \", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"code\", {\n          children: \"src/App.js\"\n        }), \" and save to reload. This is a test.\"]\n      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(\"a\", {\n        className: \"App-link\",\n        href: \"https://reactjs.org\",\n        target: \"_blank\",\n        rel: \"noopener noreferrer\",\n        children: \"Learn React\"\n      })]\n    })]\n  });\n});\n\n//# sourceURL=webpack://my-app/./src/pages/Entry/index.tsx?");
 
 /***/ }),
 
@@ -38,7 +38,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {\n  let {} = _ref;\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"div\", {\n    children: \"hello main\"\n  });\n});\n\n//# sourceURL=webpack://my-app/./src/pages/Main/index.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {\n  let {\n    entryPosts\n  } = _ref;\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"div\", {\n      children: \"hello main\"\n    })\n  });\n});\n\n//# sourceURL=webpack://my-app/./src/pages/Main/index.tsx?");
 
 /***/ }),
 
@@ -324,6 +324,75 @@ eval("module.exports = __webpack_require__.p + \"e7294e19a3b816b71a3d.png\";\n\n
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/async module */
+/******/ 	(() => {
+/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
+/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
+/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
+/******/ 		var resolveQueue = (queue) => {
+/******/ 			if(queue && queue.d < 1) {
+/******/ 				queue.d = 1;
+/******/ 				queue.forEach((fn) => (fn.r--));
+/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+/******/ 			}
+/******/ 		}
+/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
+/******/ 			if(dep !== null && typeof dep === "object") {
+/******/ 				if(dep[webpackQueues]) return dep;
+/******/ 				if(dep.then) {
+/******/ 					var queue = [];
+/******/ 					queue.d = 0;
+/******/ 					dep.then((r) => {
+/******/ 						obj[webpackExports] = r;
+/******/ 						resolveQueue(queue);
+/******/ 					}, (e) => {
+/******/ 						obj[webpackError] = e;
+/******/ 						resolveQueue(queue);
+/******/ 					});
+/******/ 					var obj = {};
+/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
+/******/ 					return obj;
+/******/ 				}
+/******/ 			}
+/******/ 			var ret = {};
+/******/ 			ret[webpackQueues] = x => {};
+/******/ 			ret[webpackExports] = dep;
+/******/ 			return ret;
+/******/ 		}));
+/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
+/******/ 			var queue;
+/******/ 			hasAwait && ((queue = []).d = -1);
+/******/ 			var depQueues = new Set();
+/******/ 			var exports = module.exports;
+/******/ 			var currentDeps;
+/******/ 			var outerResolve;
+/******/ 			var reject;
+/******/ 			var promise = new Promise((resolve, rej) => {
+/******/ 				reject = rej;
+/******/ 				outerResolve = resolve;
+/******/ 			});
+/******/ 			promise[webpackExports] = exports;
+/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
+/******/ 			module.exports = promise;
+/******/ 			body((deps) => {
+/******/ 				currentDeps = wrapDeps(deps);
+/******/ 				var fn;
+/******/ 				var getResult = () => (currentDeps.map((d) => {
+/******/ 					if(d[webpackError]) throw d[webpackError];
+/******/ 					return d[webpackExports];
+/******/ 				}))
+/******/ 				var promise = new Promise((resolve) => {
+/******/ 					fn = () => (resolve(getResult));
+/******/ 					fn.r = 0;
+/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
+/******/ 				});
+/******/ 				return fn.r ? promise : getResult();
+/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
+/******/ 			queue && queue.d < 0 && (queue.d = 0);
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
