@@ -1,7 +1,6 @@
 import './index.css'
 
 import cat from './cat.png'
-import cats from '~/'
 
 export default ({
   content,

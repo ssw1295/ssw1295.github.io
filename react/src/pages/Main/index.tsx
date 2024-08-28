@@ -1,3 +1,5 @@
+import Board from '@/components/board'
+
 import {
   Post,
 } from 'types/post'
@@ -9,7 +11,11 @@ export default ({
 }) => {
   return <>
     <div>
-      hello main
+      hello main!!
     </div>
+
+    <Board
+      posts={ [] }
+    />
   </>
 }

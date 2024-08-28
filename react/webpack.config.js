@@ -7,6 +7,9 @@ module.exports = {
   mode: 'development',
   entry: './src/index.tsx', // TypeScript 진입점
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // '@'를 'src' 디렉토리로 매핑
+    },
     extensions: ['.js', '.jsx', '.ts', '.tsx'], // 파일 확장자 처리
   },
   output: {
