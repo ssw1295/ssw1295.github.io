@@ -5,7 +5,7 @@ import {
 } from 'types/post'
 
 export default ({
-  entryPosts,
+  entryPosts = [],
 }: {
   entryPosts: Post[]
 }) => {
@@ -15,7 +15,7 @@ export default ({
     </div>
 
     <Board
-      posts={ [] }
+      posts={ entryPosts }
     />
   </>
 }
