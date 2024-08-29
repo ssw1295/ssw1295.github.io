@@ -1,5 +1,5 @@
 export interface Post {
   url: string
-  parent: string | null
+  parent: string
   depth: number
 }

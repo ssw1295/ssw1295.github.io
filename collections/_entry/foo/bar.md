@@ -62,6 +62,7 @@ for i in range(10):
 ~~~
 
 <img src="_assets/bar/2024-08-16-16-43-23.png" width="75%" />
+<img src="_assets/bar/2024-08-29-09-45-46.png" width="75%" />
 
 나는 이것에 대해 크게 혼동할 수 밖에 없었다..
 

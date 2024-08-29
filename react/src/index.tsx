@@ -7,7 +7,7 @@ import Entry from './pages/Entry/index'
 
 import {
   Post,
-} from 'types/post'
+} from '@/types/post'
 
 import './index.css'
 
@@ -72,6 +72,8 @@ const jsxEls: {
     />
   },
 }
+
+console.log('??')
 
 // 메인 공통 레퍼 생성 후 감싸서 리턴?
 
