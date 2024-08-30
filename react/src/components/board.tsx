@@ -1,8 +1,13 @@
 import _ from 'lodash'
 
 import {
+  generateParentGroupedBoardPosts,
+} from '@/utils/post'
+
+import {
   Post,
-} from 'types/post'
+  BoardPost,
+} from '@/types/post'
 
 
 export default ({
@@ -10,22 +15,42 @@ export default ({
 }: {
   posts: Post[]
 }) => {
-  return <>
-    i am board
-    <div className="board">
-      {_.map(posts, post => {
-        return <div
-          className={ `depth-${post.depth}` }
-        >
-          <a
+  const boardPosts = generateParentGroupedBoardPosts(posts)
 
-            href={ post.url }
-          >
-            { post.url }
-          </a>
-        </div>
+  return <>
+    <h3>i am board</h3>
+    <div className="board">
+      {
+        boardPosts.map((boardPost) => {
+          return <>
+            {/* 제목 */}
+            <div>
+              <span>
+                {_.map(boardPost.parents, () => <><span>ㄴ</span></>)}
+              </span>
+              <span>
+                {boardPost.parents[boardPost.parents.length - 1]}
+              </span>
+            </div>
+            {/* 게시글들 */}
+            <div>
+              {
+                _.map(boardPost.posts, (post) => {
+                  return <div>
+                    {/* 게시글 */}
+                    {_.map(post.parents, () => <><span>ㅡ</span></>)}
+                    {<>
+                      <a
+                        href={post.url}
+                      >{post.name}</a>
+                    </>}
+                  </div>
+                })
+              }
+            </div>
+          </>
+        })
       }
-      )}
     </div>
   </>
 }

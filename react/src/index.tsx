@@ -40,13 +40,12 @@ const entryPosts: Post[] = _.map(parsedEntriesJson, json => {
   const url = decodeURIComponent(json.url)
   const urlParts = _.split(url, '/')
   urlParts.shift()
-  const depth = urlParts.length
-  const parent = urlParts[(urlParts.length - 1) - 1] ?? null
+
+  const name = _.last(urlParts) as string
 
   return {
+    name,
     url,
-    parent,
-    depth,
   }
 })
 
@@ -78,7 +77,7 @@ const jsxEls: {
 const jsxEl = jsxEls[routeBase]()
 
 ReactDOM.createRoot(rootEl).render(
-  <React.StrictMode>
+  <>
     { jsxEl }
-  </React.StrictMode>
+  </>
 )

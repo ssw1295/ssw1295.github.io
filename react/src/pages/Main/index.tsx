@@ -1,6 +1,6 @@
 import {
   generateNestedPosts,
-  generateBoardOrderedPosts,
+  generateParentGroupedBoardPosts,
 } from '@/utils/post'
 
 import Board from '@/components/board'
@@ -15,11 +15,11 @@ export default ({
 }: {
   entryPosts: Post[]
 }) => {
-  const nestedPosts = generateNestedPosts(entryPosts)
-  console.log({nestedPosts})
+  // const nestedPosts = generateNestedPosts(entryPosts)
+  // console.log({nestedPosts})
 
-  const boardOrderedPosts = generateBoardOrderedPosts(entryPosts)
-  console.log({boardOrderedPosts})
+  // const boardOrderedPosts = generateParentGroupedBoardPosts(entryPosts)
+  // console.log({boardOrderedPosts})
 
   return <>
     <div>
