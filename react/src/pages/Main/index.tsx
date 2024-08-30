@@ -12,8 +12,6 @@ export default ({
 }: {
   entryPosts: Post[]
 }) => {
-  console.log('hi!!!!!')
-
   const nestedPosts = generateNestedPost(entryPosts)
   console.log({nestedPosts})
 
