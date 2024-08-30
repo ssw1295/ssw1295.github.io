@@ -12,8 +12,6 @@ export interface NestedDepthPosts {
 }
 
 export default (posts: Post[]): NestedDepthPosts => {
-  console.log('hi!!')
-
   /**
    * post들을 돌면서, nested한 객체를 만들어야 한다.
    * 한 post의 url을 /로 나눠 그것을 차례로 순환하며,
@@ -22,7 +20,7 @@ export default (posts: Post[]): NestedDepthPosts => {
    * posts
    */
 
-  const res: NestedDepthPosts = _.reduce(posts, (nestedDepthPosts, post) => {
+  const res: NestedDepthPosts = _.reduce(posts, (nestingDepthPosts, post) => {
     const {
       depth,
       parent,
@@ -33,12 +31,12 @@ export default (posts: Post[]): NestedDepthPosts => {
     depths.shift()
 
     const postRef: any = _.reduce(depths, (ref, depth, index) => {
-      return (ref[depth] ??= {_posts: []}) as NestedDepthPosts
-    }, nestedDepthPosts as NestedDepthPosts)
+      return (ref[depth] ??= {}) as NestedDepthPosts
+    }, nestingDepthPosts as NestedDepthPosts)
 
-    Object.assign(postRef, {url: `/${1}`})
+    postRef['_post'] = post
 
-    return nestedDepthPosts
+    return nestingDepthPosts
   }, {})
 
   return res
