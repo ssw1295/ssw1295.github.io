@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -55,6 +56,14 @@ module.exports = {
           copy: [
             { source: '../react_build/index.html', destination: path.resolve(__dirname, '../_includes/react-index.html') },
           ],
+        },
+      },
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      async: true,  // 타입 검사를 Webpack 빌드 프로세스와 병렬로 수행하지 않고, 동기적으로 수행하도록 설정
+      typescript: {
+        configOverwrite: {
+          include: ['./src/**/*.ts', './src/**/*.tsx'], // 특정 확장자만 포함
         },
       },
     }),
