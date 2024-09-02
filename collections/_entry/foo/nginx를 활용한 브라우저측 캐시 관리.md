@@ -4,6 +4,8 @@ Paragraphs are separated by a blank line.
 
 <img src="_assets/nginx를 활용한 브라우저측 캐시 관리/2024-08-29-09-49-24.png" width="75%" />
 
+<img src="_assets/nginx를 활용한 브라우저측 캐시 관리/2024-09-02-09-50-14.png" width="75%" />
+
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
 look like:
 
