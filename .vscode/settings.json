@@ -1,7 +1,5 @@
 {
-  "pasteImage.path": "${projectRoot}/assets/${currentFileNameWithoutExt}",
-  "pasteImage.forceUnixStyleSeparator": true,
-  "pasteImage.prefix": "",
-  "pasteImage.insertPattern": "<img src=\"/assets/${currentFileNameWithoutExt}/${imageFileName}\"/>",
-  "pasteImage.encodePath": "urlEncode",
+  "markdown.copyFiles.destination": {
+    "*": "/assets/${documentRelativeDirName}/${documentBaseName}/"
+  }
 }
