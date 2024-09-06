@@ -40,6 +40,14 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.scss$/, // SCSS 파일을 처리하는 규칙 추가
+        use: [
+          'style-loader', // CSS를 <style> 태그로 삽입
+          'css-loader',   // CSS 파일을 JavaScript 모듈로 변환
+          'sass-loader',  // SCSS 파일을 CSS로 변환
+        ],
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
