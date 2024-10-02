@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
@@ -34,10 +33,11 @@ const entries = await fetch('/entries.json', {
 })
 const jsonText = await entries.text()
 const validJsonText = jsonText.replace(/“|”/g, '"')
-const parsedEntriesJson: {url: string}[] = JSON.parse(validJsonText)
+const parsedEntriesJson: {url: string, createdDt: string}[] = JSON.parse(validJsonText)
 
 const entryPosts: Post[] = _.map(parsedEntriesJson, json => {
   const url = decodeURIComponent(json.url)
+  const createdDate =  new Date(json.createdDt)
   const urlParts = _.split(url, '/')
   urlParts.shift()
 
@@ -46,6 +46,7 @@ const entryPosts: Post[] = _.map(parsedEntriesJson, json => {
   return {
     name,
     url,
+    date: createdDate,
   }
 })
 
@@ -65,9 +66,18 @@ const jsxEls: {
     if (!entryContentEl) {
       throw new Error('no content element for entry page')
     }
+    (entryContentEl as HTMLElement).removeAttribute('style')
+
+    const entryPost = _.find(entryPosts, post => {
+      return post.url === decodeURIComponent(window.location.pathname)
+    })
+    if (!entryPost) {
+      throw new Error('no post for entry page')
+    }
 
     return <Entry
       content={ entryContentEl }
+      post={ entryPost }
     />
   },
 }

@@ -26,6 +26,7 @@ export const generateParentGroupedBoardPosts= (posts: Post[]): ParentGroupedBoar
       const {
         name,
         url,
+        date,
       }: Post = postsObj[POST_KEY] as Post
       const parts = url.split('/')
       parts.shift()
@@ -36,6 +37,7 @@ export const generateParentGroupedBoardPosts= (posts: Post[]): ParentGroupedBoar
       const boardPost: BoardPost = {
         name,
         url,
+        date,
         parents,
       }
       boardPosts.push(boardPost)

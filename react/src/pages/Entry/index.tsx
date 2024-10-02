@@ -1,19 +1,28 @@
 import './index.css'
-
 import cat from './cat.png'
+
+import {
+  Post,
+} from '@/types/post'
 
 export default ({
   content,
+  post,
 }: {
   content: Element
+  post: Post
 }) => {
-  return (
+  return <>
     <div className="App">
-      <>
-        <div
-          dangerouslySetInnerHTML={{__html: content.outerHTML}}
-        ></div>
-      </>
+      <div>
+        <h1>{ post.name }</h1>
+        <div>{ post.date.toString() }</div>
+      </div>
+
+      <div
+        dangerouslySetInnerHTML={{__html: content.outerHTML}}
+      ></div>
+
       <header className="App-header">
         <img src={ cat }/>
         <p>
@@ -29,5 +38,5 @@ export default ({
         </a>
       </header>
     </div>
-  )
+  </>
 }
