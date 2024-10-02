@@ -1,18 +1,4 @@
 ---
 layout: react-wrapper
 ---
-<article>
-  <header>
-    <h1>제목: {{ page.title | escape }}</h1>
-    <p>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-        {{ page.date | date: date_format }}
-      </time>
-    </p>
-  </header>
-
-  <main>
-    {{ content }}
-  </main>
-</article>
+{{ content }}
