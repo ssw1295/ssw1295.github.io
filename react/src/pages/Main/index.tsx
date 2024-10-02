@@ -9,6 +9,7 @@ import {
   Post,
 } from '@/types/post'
 
+import './index.scss'
 
 export default ({
   entryPosts = [],
@@ -22,8 +23,16 @@ export default ({
   // console.log({boardOrderedPosts})
 
   return <>
-    <div>
+    <div
+      className={ 'seo' }
+    >
       hello main!!
+    </div>
+
+    <div
+      id='main'
+    >
+      hohoho
     </div>
 
     <Board

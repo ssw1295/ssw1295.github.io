@@ -8,8 +8,6 @@ import {
   Post,
 } from '@/types/post'
 
-import './index.css'
-
 type ValidRouteBase = '' | 'entry'
 const VALID_ROUTE_BASES: ValidRouteBase[] = [
   '',

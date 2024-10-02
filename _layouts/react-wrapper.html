@@ -1,17 +1,21 @@
 ---
 ---
+{%- seo -%}
 
-<div id="root">
-  <div id="content">
-    {{ content }}
-  </div>
-</div>
+<body>
+  <section id="root">
+    <!-- 리액트에 의해 대체됨 -->
+    <div id="content">
+      {{ content }}
+    </div>
+  </section>
 
-{% include react-index.html %}
+  {% include react-index.html %}
+</body>
 
 <style>
-  /* id root 바로 밑  id content는 가리기 */
   #root > #content {
-    display: none;
+    position: absolute;
+    top: -9999px;
   }
 </style>

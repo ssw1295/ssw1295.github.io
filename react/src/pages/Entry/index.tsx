@@ -4,6 +4,7 @@ import cat from './cat.png'
 import {
   Post,
 } from '@/types/post'
+import { useState } from 'react'
 
 export default ({
   content,
@@ -12,6 +13,15 @@ export default ({
   content: Element
   post: Post
 }) => {
+  const easeTime = 0.1
+  const [rotation, setRotation] = useState(0)
+
+  // 회전 각도를 증가시키는 함수
+  const rotateImage = () => {
+    setRotation(rotation + 30)
+  }
+  setTimeout(rotateImage, easeTime * 1000) // 1초마다 rotateImage 함수 실행
+
   return <>
     <div className="App">
       <div>
