@@ -62,7 +62,7 @@ module.exports = {
       events: {
         onEnd: {
           copy: [
-            { source: '../react_build/index.html', destination: path.resolve(__dirname, '../_includes/react-index.html') },
+            { source: '../react_build/index.html', destination: path.resolve(__dirname, '../_includes/react.html') },
           ],
         },
       },
