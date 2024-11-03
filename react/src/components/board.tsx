@@ -17,40 +17,28 @@ export default ({
 }) => {
   const boardPosts = generateParentGroupedBoardPosts(posts)
 
-  return <>
-    <h3>i am board</h3>
-    <div className="board">
-      {
-        boardPosts.map((boardPost) => {
-          return <>
-            {/* 제목 */}
-            <div>
-              <span>
-                {_.map(boardPost.parents, () => <><span>ㄴ</span></>)}
-              </span>
-              <span>
-                {boardPost.parents[boardPost.parents.length - 1]}
-              </span>
+  return (
+    <section className="board">
+      <h2>boards</h2>
+      <ul>
+        {boardPosts.map((boardPost, idx) => (
+          <li key={idx} style={{ marginLeft: `${boardPost.parents.length * 1}rem` }}>
+            {/* 카테고리 제목 */}
+            <div className="category">
+              {boardPost.parents[boardPost.parents.length - 1]}
             </div>
-            {/* 게시글들 */}
-            <div>
-              {
-                _.map(boardPost.posts, (post) => {
-                  return <div>
-                    {/* 게시글 */}
-                    {_.map(post.parents, () => <><span>ㅡ</span></>)}
-                    {<>
-                      <a
-                        href={post.url}
-                      >{post.name}</a>
-                    </>}
-                  </div>
-                })
-              }
-            </div>
-          </>
-        })
-      }
-    </div>
-  </>
+
+            {/* 해당 카테고리의 게시글들 */}
+            <ul>
+              {boardPost.posts.map((post, postIdx) => (
+                <li key={postIdx}>
+                  <a href={post.url}>{post.name}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
 }
