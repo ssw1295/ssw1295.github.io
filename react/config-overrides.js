@@ -18,7 +18,7 @@ module.exports = function override(config, env) {
 
         // index.html 파일 경로
         const indexPath = path.join(buildDir, 'index.html')
-        const targetPath = path.join(targetDir, 'react-index.html')
+        const targetPath = path.join(targetDir, 'react.html')
 
         // 파일 복사 및 이름 변경
         fs.copyFileSync(indexPath, targetPath)
