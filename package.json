@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "bundle": "cd docs && bundle install",
     "serve": "cd docs && ruby serve.rb",
     "react": "cd react && npm run watch-build",
     "symlink": "node create-entry-symlink.js"
