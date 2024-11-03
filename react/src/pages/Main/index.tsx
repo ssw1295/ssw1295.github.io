@@ -30,7 +30,6 @@ export default ({
             left: `${Math.random() * 100}%`,
             animationDuration: `${Math.random() * 2 + 1}s`,
             animationDelay: `${Math.random() * 2}s`,
-            transform: `rotate(${30}deg)`  // 10~20도 사이 랜덤 각도
           }}
         >
           {randomChar}
@@ -42,7 +41,7 @@ export default ({
 
   return (
     <div id="main">
-      {/* <div className="rain-container">
+      {/* <div className="rain-container" style={{ top: '-100px' }}>
         {createRaindrops()}
       </div> */}
 

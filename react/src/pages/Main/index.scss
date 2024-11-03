@@ -17,16 +17,15 @@
   color: var(--text-color);
   opacity: 0.5;
   animation: rain linear infinite;
-  transform: rotate(15deg);  // 빗방울 자체를 15도 기울임
 }
 
 // 빗방울 떨어지는 애니메이션
 @keyframes rain {
   0% {
-    transform: translate(-20px, -100vh) rotate(15deg);  // 시작점에서 약간 왼쪽으로
+    transform: translate(-20px, -100vh);  // 시작점에서 약간 왼쪽으로
   }
   100% {
-    transform: translate(20px, 100vh) rotate(15deg);    // 끝점에서 약간 오른쪽으로
+    transform: translate(20px, 100vh);    // 끝점에서 약간 오른쪽으로
   }
 }
 
