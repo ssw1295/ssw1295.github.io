@@ -4,6 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
+const REACT_BUILD_DIRNAME = 'react_build'
+
+const JEKYLL_ROOT_PATH = path.resolve(__dirname, '../docs')
+const REACT_BUILD_PATH = path.resolve(JEKYLL_ROOT_PATH, REACT_BUILD_DIRNAME)
+
 module.exports = {
   mode: 'development',
   entry: './src/index.tsx', // TypeScript 진입점
@@ -14,9 +19,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'], // 파일 확장자 처리
   },
   output: {
-    path: path.resolve(__dirname, '../react_build'),
+    path: REACT_BUILD_PATH,
     filename: '[name].[contenthash].js',
-    publicPath: '/react_build/',
+    publicPath: `/${REACT_BUILD_DIRNAME}/`,
     clean: true,
   },
   module: {
@@ -62,7 +67,10 @@ module.exports = {
       events: {
         onEnd: {
           copy: [
-            { source: '../react_build/index.html', destination: path.resolve(__dirname, '../_includes/react.html') },
+            {
+              source: path.join(REACT_BUILD_PATH, 'index.html'),
+              destination: path.join(JEKYLL_ROOT_PATH, '_includes/react.html')
+            },
           ],
         },
       },

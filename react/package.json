@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env BUILD_PATH='../jekyll/react_build' react-app-rewired build",
+    "build": "cross-env react-app-rewired build",
     "watch-build": "webpack --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
