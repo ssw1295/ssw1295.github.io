@@ -45,4 +45,3 @@ defaults:
       type: "pages"
     values:
       layout: "page-json"
-      permalink: /:path

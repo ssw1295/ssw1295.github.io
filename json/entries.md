@@ -1,5 +1,5 @@
 ---
-# permalink: /json/entries.json
+permalink: /json/entries.json
 ---
 [
 {% for item in site.entry %}
