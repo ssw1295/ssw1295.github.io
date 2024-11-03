@@ -1,0 +1,19 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "serve": "cd docs && ruby serve.rb",
+    "react": "cd react && npm run watch-build",
+    "symlink": "node create-entry-symlink.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "my-blog": "file:"
+  }
+}
