@@ -1,6 +1,9 @@
 {
   "name": "my-blog",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.19.1"
+  },
   "description": "",
   "main": "index.js",
   "directories": {
@@ -8,8 +11,8 @@
   },
   "scripts": {
     "bundle": "cd docs && bundle install",
-    "serve": "cd docs && ruby serve.rb",
-    "react": "cd react && npm run watch-build",
+    "serve": "cd docs && bundle exec ruby serve.rb",
+    "react": "cd react && npm i && npm run watch-build",
     "symlink": "node create-entry-symlink.js"
   },
   "author": "",
