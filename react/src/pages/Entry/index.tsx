@@ -1,9 +1,15 @@
-import cat from './cat.png'
+import {
+  useState,
+} from 'react'
 
 import {
   Post,
 } from '@/types/post'
-import { useState } from 'react'
+
+import cat from './cat.png'
+
+import './index.scss'
+
 
 export default ({
   content,

@@ -1,12 +1,15 @@
 import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
-import Main from './pages/Main/index'
-import Entry from './pages/Entry/index'
+import Main from './pages/Main'
+import Entry from './pages/Entry'
 
 import {
   Post,
 } from '@/types/post'
+
+import './index.scss'
+
 
 type ValidRouteBase = '' | 'entry'
 const VALID_ROUTE_BASES: ValidRouteBase[] = [

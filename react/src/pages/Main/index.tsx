@@ -1,5 +1,5 @@
-import Board from '@/components/board'
-import ThemeToggle from '@/components/ThemeToggle'
+import Board from '@/components/Board'
+import ThemeToggle from '@/components/ThemeToggle/index'
 
 import {
   Post,
