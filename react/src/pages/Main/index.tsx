@@ -1,5 +1,4 @@
 import Board from '@/components/Board'
-import ThemeToggle from '@/components/ThemeToggle/index'
 
 import {
   Post,
@@ -44,8 +43,6 @@ export default ({
       {/* <div className="rain-container" style={{ top: '-100px' }}>
         {createRaindrops()}
       </div> */}
-
-      <ThemeToggle />
 
       <h1>
         sangwon's dev log

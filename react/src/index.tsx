@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
+import PageWrapper from '@/components/PageWrapper'
 import Main from './pages/Main'
 import Entry from './pages/Entry'
 
@@ -62,7 +63,7 @@ const entryPosts: Post[] = _.map(parsedEntriesJson, json => {
 console.log({entryPosts})
 
 
-const jsxEls: {
+const pageComponents: {
   [keys in ValidRouteBase]: () => JSX.Element
 } = {
   '': () => {
@@ -93,8 +94,11 @@ const jsxEls: {
   },
 }
 
-const jsxEl = jsxEls[routeBase]()
+const PageComponent = pageComponents[routeBase]()
+
 
 ReactDOM.createRoot(rootEl).render(
-  <>{jsxEl}</>
+  <PageWrapper>
+    {PageComponent}
+  </PageWrapper>
 )
