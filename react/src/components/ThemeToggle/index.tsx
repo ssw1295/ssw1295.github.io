@@ -5,6 +5,7 @@ import {
 
 import './index.scss'
 
+const COMPONENT_NAME = 'theme-toggle'
 
 export default function ThemeToggle() {
   // 시스템에 설정된 테마 가져오기
@@ -22,7 +23,7 @@ export default function ThemeToggle() {
 
   return <>
     <button
-      className="theme-toggle"
+      className={COMPONENT_NAME}
       onClick={toggleTheme}
       aria-label="테마 변경"
     >

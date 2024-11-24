@@ -1,33 +1,4 @@
-@import '@/scss/base/reset.scss';
-
-
-// 테마 변수
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --link-color: #0000EE;
-  --secondary-color: #666666;
-}
-
-[data-theme='light'] {
-  --bg-color: #F5F5F5;
-  --text-color: #000000;
-  --link-color: #0000EE;
-  --secondary-color: #666666;
-}
-
-[data-theme='dark'] {
-  --bg-color: #1a1a1a;
-  --text-color: #ffffff;
-  --link-color: #66b3ff;
-  --secondary-color: #999999;
-}
-
-// 기본 변수
-$font-family: 'D2Coding', monospace;  // 기본 폰트를 D2Coding으로 변경, fallback으로 monospace
-$spacing: 1.2rem;
-$base-font-size: 18px;
-
+@import '@/scss/base/index.scss';
 
 body {
   font-family: $font-family;
@@ -42,4 +13,3 @@ body {
   -webkit-font-smoothing: antialiased;  // 폰트 렌더링 개선
   -moz-osx-font-smoothing: grayscale;   // 폰트 렌더링 개선
 }
-

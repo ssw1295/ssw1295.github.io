@@ -8,6 +8,7 @@ import myImage from '@/assets/images/seo.png'
 
 import './index.scss'
 
+const COMPONENT_NAME = 'main'
 
 export default ({
   entryPosts = [],
@@ -39,7 +40,7 @@ export default ({
   }
 
   return (
-    <div id="main">
+    <div className={COMPONENT_NAME}>
       {/* <div className="rain-container" style={{ top: '-100px' }}>
         {createRaindrops()}
       </div> */}

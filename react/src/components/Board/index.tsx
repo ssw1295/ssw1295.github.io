@@ -9,6 +9,7 @@ import {
   BoardPost,
 } from '@/types/post'
 
+const COMPONENT_NAME = 'board'
 
 export default ({
   posts,
@@ -18,7 +19,7 @@ export default ({
   const boardPosts = generateParentGroupedBoardPosts(posts)
 
   return (
-    <section className="board">
+    <section className={COMPONENT_NAME}>
       <h2>boards</h2>
       <ul>
         {boardPosts.map((boardPost, idx) => (

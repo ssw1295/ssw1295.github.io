@@ -5,12 +5,11 @@ import PageWrapper from '@/components/PageWrapper'
 import Main from './pages/Main'
 import Entry from './pages/Entry'
 
+import './index.scss'
+
 import {
   Post,
 } from '@/types/post'
-
-import './index.scss'
-
 
 type ValidRouteBase = '' | 'entry'
 const VALID_ROUTE_BASES: ValidRouteBase[] = [
@@ -98,7 +97,9 @@ const PageComponent = pageComponents[routeBase]()
 
 
 ReactDOM.createRoot(rootEl).render(
-  <PageWrapper>
-    {PageComponent}
-  </PageWrapper>
+  <div id="app">
+    <PageWrapper>
+      {PageComponent}
+    </PageWrapper>
+  </div>
 )
