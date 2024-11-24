@@ -5,7 +5,7 @@
 ### 대충 멋진 소소제목
 #### 대충 멋진 소소소제목
 
-![alt text](<_assets/nginx를 활용한 브라우저측 캐시 관리/osiglT_d7Y3MvexXM4GoQhB1ZTegmVYio4oaLenP1wnF6mO34bkHHjWgtJQWRIm2ILirBW_dJJ3kVW5HnyF1FUeUlzDJMpHbDRuOY2e3dGdbQwMb9C9CdquU6a2I7V_g4IAVhuq6MgkXUaBRq_ygIQ.webp>)
+![alt text](<_assets/nginx를 활용한 브라우저측 캐시 관리/sang.webp>)
 Paragraphs are separated by a blank line.  
 한칸 더 ?  
 
