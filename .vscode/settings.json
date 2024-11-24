@@ -2,4 +2,8 @@
   "markdown.copyFiles.destination": {
     "_entry/**/*": "_assets/${documentBaseName}/",
   },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "editor.renderWhitespace": "all",
+  },
 }
