@@ -8,6 +8,7 @@
 ![alt text](<_assets/nginx를 활용한 브라우저측 캐시 관리/sang.webp>)
 ![alt text](<_assets/nginx를 활용한 브라우저측 캐시 관리/20230515014548_1.jpg>)
 ![alt text](<_assets/nginx를 활용한 브라우저측 캐시 관리/20190504_215453.jpg>)
+![alt text](<_assets/nginx를 활용한 브라우저측 캐시 관리/한글이미지.jpg>)
 
 Paragraphs are separated by a blank line.  
 한칸 더 ?  
