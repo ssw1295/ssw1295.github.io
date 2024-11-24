@@ -1,0 +1,164 @@
+@import '@/scss/base/index.scss';
+
+.highlight {
+  // filter: saturate(3); // 채도 20% 증가
+  // 어둡기 증가
+  // filter: brightness(0.8);
+
+  $bg-color: var(--bg-color);
+  $text-color: var(--text-color);
+
+  $code-background: $bg-color;
+  $error-background: $code-background;
+
+
+  $code-text: $text-color;
+  $operator: $code-text;
+
+  $const: dodgerblue;
+  $function-name: royalblue;
+
+  $document: slateblue;
+  $string-literal: indianred;
+  $comment: mediumseagreen;
+  $error-text: indianred;
+  $html-tag: $code-text;
+  $tag: gray;
+
+  $success-highlight: #d4ffd4;
+  $error-highlight: #ffd6d6;
+
+
+  table {
+    td {
+      padding: 5px;
+    }
+    pre {
+      margin: 0;
+    }
+  }
+
+  // Base text and background
+  &, .w {
+    color: $code-text;
+    background-color: $code-background;
+  }
+
+  // Keywords (import, from, const, etc)
+  .k, .kd, .kn, .kp, .kr, .kt, .kv {
+    color: $const;
+  }
+
+  // Generic removed
+  .gr {
+    color: $code-background;
+  }
+
+  // Git diff deletion
+  .gd {
+    color: $error-background;
+    background-color: $error-highlight;
+  }
+
+  // Built-in types and classes
+  .nb, .nc, .no, .nn {
+    color: $document;
+  }
+
+  // HTML tags and attributes
+  .na, .nt {
+    color: $html-tag;
+  }
+
+  .nx, .sr {
+    color: $text-color;
+  }
+
+  // Git diff insertion
+  .gi {
+    color: $html-tag;
+    background-color: $success-highlight;
+  }
+
+  // Special emphasis
+  .ges {
+    // font-weight: bold;
+    font-style: italic;
+  }
+
+  // Constants
+  .kc {
+    color: $operator;
+  }
+
+  // Literals (numbers, etc)
+  .l, .ld, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx {
+    color: $operator;
+  }
+
+  // Special names and built-ins
+  .sb, .bp, .ne, .nl, .py {
+    color: $operator;
+  }
+
+  .p {
+    color: $tag;
+  }
+
+  // Variables
+  .nv, .vc, .vg, .vi, .vm {
+    color: $operator;
+  }
+
+  // Operators
+  .ow {
+    color: $operator;
+  }
+
+  .o, .err {
+    color: $html-tag
+  }
+
+  // GitHub specific highlights
+  .gh, .gu {
+    color: $operator;
+    // font-weight: bold;
+  }
+
+  // String literals
+  .s, .sa, .sc, .dl, .sd, .s2, .se, .sh, .sx, .s1, .ss {
+    color: $string-literal;
+  }
+
+  // Decorators and function names
+  .nd, .nf, .fm {
+    color: $function-name;
+  }
+
+  // Comments
+  .c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs {
+    color: $comment;
+  }
+
+  // Generic text
+  .gl, .gt {
+    color: $comment;
+  }
+
+  // Names and string interpolation
+  .ni, .si {
+    color: $code-text;
+  }
+
+  // Generic emphasis
+  .ge {
+    color: $code-text;
+    font-style: italic;
+  }
+
+  // Generic strong
+  .gs {
+    color: $code-text;
+    // font-weight: bold;
+  }
+}

@@ -39,7 +39,7 @@ export default ({
     return drops
   }
 
-  return (
+  return <>
     <div className={COMPONENT_NAME}>
       {/* <div className="rain-container" style={{ top: '-100px' }}>
         {createRaindrops()}
@@ -117,5 +117,5 @@ export default ({
         <Board posts={entryPosts} />
       </section>
     </div>
-  )
+  </>
 }

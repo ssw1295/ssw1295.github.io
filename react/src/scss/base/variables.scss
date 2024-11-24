@@ -1,5 +1,6 @@
 // 테마 변수
 :root {
+  --theme-mode: 'light';
   --bg-color: #ffffff;
   --text-color: #000000;
   --link-color: #0000EE;
@@ -7,12 +8,14 @@
 }
 
 [data-theme='light'] {
+  --theme-mode: 'light';
   --bg-color: #F5F5F5;
   --text-color: #000000;
   --link-color: #0000EE;
   --secondary-color: #666666;
 }
 [data-theme='dark'] {
+  --theme-mode: 'dark';
   --bg-color: #1a1a1a;
   --text-color: #ffffff;
   --link-color: #66b3ff;

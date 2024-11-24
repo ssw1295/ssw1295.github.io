@@ -1,117 +1,162 @@
 ---
 ---
-Paragraphs are separated by a blank line.
+# 대충 멋진 부제목
+## 대충 멋진 소제목
+### 대충 멋진 소소제목
+#### 대충 멋진 소소소제목
 
-<img src="_assets/nginx를 활용한 브라우저측 캐시 관리/2024-08-29-09-49-24.png" width="75%" />
+![alt text](<_assets/nginx를 활용한 브라우저측 캐시 관리/osiglT_d7Y3MvexXM4GoQhB1ZTegmVYio4oaLenP1wnF6mO34bkHHjWgtJQWRIm2ILirBW_dJJ3kVW5HnyF1FUeUlzDJMpHbDRuOY2e3dGdbQwMb9C9CdquU6a2I7V_g4IAVhuq6MgkXUaBRq_ygIQ.webp>)
+Paragraphs are separated by a blank line.  
+한칸 더 ?  
 
-<img src="_assets/nginx를 활용한 브라우저측 캐시 관리/2024-09-02-09-50-14.png" width="75%" />
+한 줄을 띄어쓰는 것은 어쩌면 불편하다.  
+이렇게 한단계 더 내려야 하기 때문인데,  
+어쩌면 이게 더 이쁠 수도?
 
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
+안녕 또다른 p야  
+이렇게 나눠버려?
+
 look like:
 
-  * this one
-  * that one
-  * the other one
+- 목록1
+  - 목록1.1
+    1. 오더1
+    2. 오더2
+      - zzz
+      - zz
+    4. 오더3
+- 목록2
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
+_휘어쓰기_,
+__굵게 쓰기__,
+___굵고 휘어쓰기___,
+__굵게, _굵고 휘어쓰기___
 
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
+> 블록 인용은 이렇게 쓰인다.  
+> 여러 문단을 걸쳐 쓸 수 있다.  
+> 이렇게 쓰인다.
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-
-
+유니코드는 지원된다. ☺
 
 An h2 header
-------------
-
-Here's a numbered list:
-
- 1. first item
- 2. second item
- 3. third item
-
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
-
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
-
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
-
-~~~
-define foobar() {
-    print "Welcome to flavor country!";
-}
-~~~
-
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
-
-~~~python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
-~~~
+---
 
 ~~~javascript
-const a = 1
-try {
-  throw new Error('test')
-} catch (e) {
-  console.log(e)
-}
+import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
+import PageWrapper from '@/components/PageWrapper'
+import Main from './pages/Main'
+import Entry from './pages/Entry'
+
+import {
+  Post,
+} from '@/types/post'
+
+import './index.scss'
+
+
+type ValidRouteBase = '' | 'entry'
+const VALID_ROUTE_BASES: ValidRouteBase[] = [
+  '',
+  'entry',
+]
+
+// 초기 테마 설정
+const initializeTheme = () => {
+  const savedTheme = localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+  document.documentElement.setAttribute('data-theme', savedTheme)
+}
+
+initializeTheme()
+
+const routeBase = _.split(window.location.pathname, '/')[1] as ValidRouteBase
+if (!_.includes(VALID_ROUTE_BASES, routeBase)) {
+  throw new Error('invalid route for render react app')
+}
+
+const rootEl = document.getElementById('root')
+if (!rootEl) {
+  throw new Error('no root element for render react app')
+}
+
+
+const entries = await fetch('/json/entries.json', {
+  method: 'GET',
+})
+const jsonText = await entries.text()
+const validJsonText = jsonText.replace(/“|”/g, '"')
+const parsedEntriesJson: {url: string, createdDt: string}[] = JSON.parse(validJsonText)
+
+const entryPosts: Post[] = _.map(parsedEntriesJson, json => {
+  const url = decodeURIComponent(json.url)
+  const createdDate =  new Date(json.createdDt)
+  const urlParts = _.split(url, '/')
+  urlParts.shift()
+
+  const name = _.last(urlParts) as string
+
+  return {
+    name,
+    url,
+    date: createdDate,
+  }
+})
+
+console.log({entryPosts})
+
+
+const pageComponents: {
+  [keys in ValidRouteBase]: () => JSX.Element
+} = {
+  '': () => {
+    return (
+      <Main
+        entryPosts={entryPosts}
+      />
+    )
+  },
+  'entry': () => {
+    const entryContentEl = rootEl.querySelector('#content')
+    if (!entryContentEl) {
+      throw new Error('no content element for entry page')
+    }
+    (entryContentEl as HTMLElement).removeAttribute('style')
+
+    const entryPost = _.find(entryPosts, post => post.url === decodeURIComponent(window.location.pathname))
+    if (!entryPost) {
+      throw new Error('no post for entry page')
+    }
+
+    return (
+      <Entry
+        content={entryContentEl}
+        post={entryPost}
+      />
+    )
+  },
+}
+
+const PageComponent = pageComponents[routeBase]()
+
+
+ReactDOM.createRoot(rootEl).render(
+  <div id="app">
+    <PageWrapper>
+      {PageComponent}
+    </PageWrapper>
+  </div>
+)
 ~~~
 
-<img src="_assets/bar/2024-08-16-16-43-23.png" width="75%" />
 
-나는 이것에 대해 크게 혼동할 수 밖에 없었다..
-
-### An h3 header ###
-
-Now a nested list:
-
- 1. First, get these ingredients:
-
-      * carrots
-      * celery
-      * lentils
-
- 2. Boil some water.
-
- 3. Dump everything in the pot and follow
-    this algorithm:
-
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
-
-    Do not bump wooden spoon or it will fall.
-
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
 
 Here's a link to [a website](http://foo.bar), to a [local
 doc](local-doc.html), and to a [section heading in the current
 doc](#an-h2-header). Here's a footnote [^1].
 
-[^1]: Footnote text goes here.
+[^2]: Footnote text goes here.
 
 Tables can look like this:
 
@@ -139,35 +184,4 @@ green     Leaves, grass, frogs
 --------  -----------------------
 
 A horizontal rule follows.
-
 ***
-
-Here's a definition list:
-
-apples
-  : Good for making applesauce.
-oranges
-  : Citrus!
-tomatoes
-  : There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term/definition pair to spread things out more.)
-
-Here's a "line block":
-
-| Line one
-|   Line too
-| Line tree
-
-and images can be specified like so:
-
-![example image](example-image.jpg "An exemplary image")
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
