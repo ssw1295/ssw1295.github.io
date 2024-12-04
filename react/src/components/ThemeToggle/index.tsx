@@ -9,7 +9,8 @@ const COMPONENT_NAME = 'theme-toggle'
 
 export default function ThemeToggle() {
   // 시스템에 설정된 테마 가져오기
-  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  const systemTheme = isSystemDark ? 'dark' : 'light'
   const localTheme = localStorage.getItem('theme')
 
   const [brightness, setBrightness] = useState(localTheme || systemTheme)
@@ -18,6 +19,11 @@ export default function ThemeToggle() {
   const toggleTheme = () => {
     const newTheme = (brightness === 'light') ? 'dark' : 'light'
     localStorage.setItem('theme', newTheme)
+
+    console.log({
+      localStorage,
+      newTheme,
+    })
 
     document.documentElement.setAttribute('data-theme', newTheme)
     setBrightness(newTheme)
