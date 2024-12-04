@@ -1,16 +1,20 @@
 @import '@/scss/base/index.scss';
 
 .highlight {
-  // filter: saturate(3); // 채도 20% 증가
-  // 어둡기 증가
-  // filter: brightness(0.8);
-
   $bg-color: var(--bg-color);
   $text-color: var(--text-color);
 
   $code-background: $bg-color;
   $error-background: $code-background;
 
+  :root[data-theme='dark'] & {
+    --code-background: hsl(from var(--bg-color) h s calc(l + 1));
+  }
+  :root[data-theme='light'] & {
+    --code-background: hsl(from var(--bg-color) h s calc(l - 1));
+  }
+
+  background-color: var(--code-background);
 
   $code-text: $text-color;
   $operator: $code-text;
@@ -41,7 +45,7 @@
   // Base text and background
   &, .w {
     color: $code-text;
-    background-color: $code-background;
+    // background-color: $code-background;
   }
 
   // Keywords (import, from, const, etc)
