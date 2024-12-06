@@ -1,5 +1,7 @@
+$highlight-color: #A1BAF0;
+
 // 테마 변수
-$theme-base-color: #95BCF4;
+$theme-base-color: #A1BAF0;
 
 :root {
   --theme-mode: 'light';
@@ -11,17 +13,23 @@ $theme-base-color: #95BCF4;
 
 [data-theme='light'] {
   --theme-mode: 'light';
-  --theme-color: hsl(from #{$theme-base-color} h calc(s + 90) calc(l - 0));
-  --bg-color: #F5F5F5;
-  --text-color: #000000;
+
+  --highlight-color: hsl(from #{$highlight-color} h calc(s + 0) calc(l + 0));
+  --title-color: hsl(from #000000 h calc(s + 0) calc(l + 5));
+  --text-color: hsl(from #000000 h calc(s + 0) calc(l + 10));
+
+  --bg-color: hsl(from #ffffff h calc(s + 0) calc(l - 5));
   --link-color: #0000EE;
   --secondary-color: #666666;
 }
 [data-theme='dark'] {
   --theme-mode: 'dark';
-  --theme-color: hsl(from #{$theme-base-color} h calc(s + 0) calc(l + 0));
-  --bg-color: #1a1a1a;
-  --text-color: #ffffff;
+
+  --highlight-color: hsl(from #{$highlight-color} h calc(s + 0) calc(l + 0));
+  --title-color: hsl(from #ffffff h calc(s + 0) calc(l - 10));
+  --text-color: hsl(from #ffffff h calc(s + 0) calc(l - 15));
+
+  --bg-color: hsl(from #000000 h calc(s + 0) calc(l + 10));
   --link-color: #66b3ff;
   --secondary-color: #999999;
 }

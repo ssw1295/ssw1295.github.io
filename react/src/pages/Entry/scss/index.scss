@@ -5,12 +5,19 @@
     margin-bottom: 20px;
 
     .title {
-      color: var(--theme-color);
+      font-size: 32px;
+      color: var(--title-color);
     }
 
     .date {
       color: gray;
       font-size: 14px;
+    }
+
+    hr {
+      margin: 20px 0px;
+      border: 1px solid;
+      opacity: 0.1;
     }
   }
 
@@ -46,12 +53,29 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--theme-color);
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    margin: 16px 0px;
+    color: var(--title-color);
+  }
+
+
   blockquote {
-    border-left: 5px solid var(--theme-color);
+    border-left: 5px solid var(--highlight-color);
     padding-left: 10px;
+  }
+
+
+  strong {
+    color: var(--highlight-color);
   }
 }

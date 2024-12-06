@@ -1,8 +1,12 @@
 @import '@/scss/base/index.scss';
 
 .main {
+  section > h2 {
+    color: var(--title-color);
+  }
+
   .title {
-    color: var(--theme-color);
+    color: var(--title-color);
   }
 
   // 빗방울 컨테이너

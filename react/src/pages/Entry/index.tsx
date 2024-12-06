@@ -32,6 +32,7 @@ export default ({
       >
         <h1 className="title">{ post.name }</h1>
         <div className="date">{ formatDate(post.date) }</div>
+        <hr />
       </div>
 
       <div
