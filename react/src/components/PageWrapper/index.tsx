@@ -1,4 +1,4 @@
-import ThemeToggle from '@/components/ThemeToggle'
+import Header from '@/components/Header'
 
 import './index.scss'
 
@@ -11,7 +11,7 @@ export default ({
 }) => {
   return <>
     <div className={COMPONENT_NAME}>
-      <ThemeToggle />
+      <Header />
 
       {children}
 

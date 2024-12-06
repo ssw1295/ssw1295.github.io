@@ -30,12 +30,14 @@ export default function ThemeToggle() {
   }
 
   return <>
-    <button
-      className={COMPONENT_NAME}
-      onClick={toggleTheme}
-      aria-label="테마 변경"
-    >
-      {brightness === 'light' ? '🌞' : '🌙'}
-    </button>
+    <div className={COMPONENT_NAME}>
+      <button
+        className={COMPONENT_NAME}
+        onClick={toggleTheme}
+        aria-label="테마 변경"
+      >
+        {brightness === 'light' ? '🌞' : '🌙'}
+      </button>
+    </div>
   </>
 }
