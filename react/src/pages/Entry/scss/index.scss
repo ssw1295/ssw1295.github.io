@@ -1,6 +1,19 @@
 @import '@/scss/base/index.scss';
 
 .entry {
+  .header {
+    margin-bottom: 20px;
+
+    .title {
+      color: var(--theme-color);
+    }
+
+    .date {
+      color: gray;
+      font-size: 14px;
+    }
+  }
+
   @import './code.scss';
 
   p {
@@ -33,9 +46,12 @@
     }
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--theme-color);
+  }
 
   blockquote {
-    border-left: 5px solid gray;
+    border-left: 5px solid var(--theme-color);
     padding-left: 10px;
   }
 }

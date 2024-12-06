@@ -1,4 +1,6 @@
 // 테마 변수
+$theme-base-color: #95BCF4;
+
 :root {
   --theme-mode: 'light';
   --bg-color: #ffffff;
@@ -8,16 +10,16 @@
 }
 
 [data-theme='light'] {
-  --is-dark-mode: false;
   --theme-mode: 'light';
+  --theme-color: hsl(from #{$theme-base-color} h calc(s + 90) calc(l - 0));
   --bg-color: #F5F5F5;
   --text-color: #000000;
   --link-color: #0000EE;
   --secondary-color: #666666;
 }
 [data-theme='dark'] {
-  --is-dark-mode: true;
   --theme-mode: 'dark';
+  --theme-color: hsl(from #{$theme-base-color} h calc(s + 0) calc(l + 0));
   --bg-color: #1a1a1a;
   --text-color: #ffffff;
   --link-color: #66b3ff;
@@ -27,4 +29,4 @@
 // 기본 변수
 $font-family: 'D2Coding', monospace;  // 기본 폰트를 D2Coding으로 변경, fallback으로 monospace
 $spacing: 1.0rem;
-$base-font-size: 14px;
+$base-font-size: 16px;

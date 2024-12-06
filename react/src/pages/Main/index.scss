@@ -1,6 +1,10 @@
 @import '@/scss/base/index.scss';
 
 .main {
+  .title {
+    color: var(--theme-color);
+  }
+
   // 빗방울 컨테이너
   .rain-container {
     position: fixed;

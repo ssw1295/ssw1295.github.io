@@ -45,11 +45,15 @@ export default ({
         {createRaindrops()}
       </div> */}
 
-      <h1>
+      <h1
+        className="title"
+      >
         sangwon's dev log
       </h1>
 
-      <section className="profile-card">
+      <section
+        className="profile-card"
+      >
         <h2>profile</h2>
         <h2>
           <img
@@ -113,9 +117,7 @@ export default ({
         </ul>
       </section>
 
-      <section>
-        <Board posts={entryPosts} />
-      </section>
+      <Board posts={entryPosts} />
     </div>
   </>
 }
