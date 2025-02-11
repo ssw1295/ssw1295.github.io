@@ -5,6 +5,7 @@ html {
 
 *, *::before, *::after {
   box-sizing: inherit;
+  font-weight: normal;
 }
 
 /* Remove default margin */
@@ -44,6 +45,7 @@ input, button, textarea, select {
 
 /* Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
+  // font-weight: normal;
   overflow-wrap: break-word;
 }
 
