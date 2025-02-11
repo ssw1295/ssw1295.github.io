@@ -1,41 +1,47 @@
 @import '@/scss/base/index.scss';
 
 .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 4rem; // 헤더 높이 추가
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0 1rem;
   background-color: var(--background-color); // 배경색 추가
   z-index: 100; // 다른 요소들 위에 표시
+  display: flex;
+  justify-content: space-between;
 
-  .hamburger-menu,
-  .theme-toggle {
-    button {
-      position: fixed;
-      top: 1rem;
-      padding: 0.5rem;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      opacity: 0.8;
-      transition: opacity 0.3s;
+  margin: 40px 0px;
 
-      &:hover {
-        opacity: 1;
-      }
+  .header-left button {
+    margin-right: 10px;
+
+    &.active {
+      opacity: 1;
+      // 밑줄
+      border-bottom: 2px solid var(--title-color);
+    }
+  }
+
+  button {
+    color: var(--title-color);
+
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+
+    margin: 0px;
+    padding: 0px;
+
+    &:hover {
+      opacity: 1;
     }
   }
 
   .hamburger-menu button {
-    left: 1rem;
+    text-align: left;
   }
 
   .theme-toggle button {
-    right: 1rem;
+    text-align: right;
   }
 }

@@ -11,7 +11,10 @@ import {
   Post,
 } from '@/types/post'
 
-type ValidRouteBase = '' | 'entry'
+import {
+  ValidRouteBase,
+} from '@/types/route'
+
 const VALID_ROUTE_BASES: ValidRouteBase[] = [
   '',
   'entry',
@@ -98,7 +101,9 @@ const PageComponent = pageComponents[routeBase]()
 
 ReactDOM.createRoot(rootEl).render(
   <div id="app">
-    <PageWrapper>
+    <PageWrapper
+      routeBase={routeBase}
+    >
       {PageComponent}
     </PageWrapper>
   </div>

@@ -10,8 +10,5 @@ body {
   background-color: var(--bg-color);
   line-height: 1.6;
   font-size: $base-font-size;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: $spacing * 2;
   transition: background-color 0.3s, color 0.3s;  // 부드러운 전환 효과
 }

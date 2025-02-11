@@ -8,13 +8,46 @@ import ThemeToggle from './ThemeToggle/index'
 
 import './index.scss'
 
+import {
+  ValidRouteBase,
+} from '@/types/route'
+
 const COMPONENT_NAME = 'main-header'
 
-export default function Header() {
+export default function Header({
+  routeBase,
+}: {
+  routeBase: ValidRouteBase
+}) {
   return <>
     <div className={COMPONENT_NAME}>
-      <HamburgerMenu />
-      <ThemeToggle />
+      <div
+        className="header-left"
+      >
+        <button
+          className={routeBase === '' ? 'active' : ''}
+          onClick={() => {
+            window.location.href = '/'
+          }}
+        >Profile😊</button>
+        <button
+          // className={routeBase === '' ? 'active' : ''}
+          onClick={() => {
+            window.location.href = '/career'
+          }}
+        >Career💼</button>
+        <button
+          className={routeBase === 'entry' ? 'active' : ''}
+          onClick={() => {
+            window.location.href = '/posts'
+          }}
+        >Posts📝</button>
+      </div>
+      <div
+        className="header-right"
+      >
+        <ThemeToggle />
+      </div>
     </div>
   </>
 }
