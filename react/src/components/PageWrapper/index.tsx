@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 import './index.scss'
 
@@ -23,9 +24,7 @@ export default ({
 
       {children}
 
-      <div className="page-wrapper-footer">
-        <span>Copyright 2024. seo all rights reserved.</span>
-      </div>
+      <Footer />
     </div>
   </>
 }

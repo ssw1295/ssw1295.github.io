@@ -1,6 +1,8 @@
 @import '@/scss/base/index.scss';
 
 .main {
+  border: 1px solid green;
+
   section > h2 {
     color: var(--title-color);
   }
