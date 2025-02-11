@@ -1,9 +1,3 @@
-import Board from './Board/index'
-
-import {
-  Post,
-} from '@/types/post'
-
 import myImage from '@/assets/images/seo.png'
 
 import './index.scss'
@@ -11,9 +5,7 @@ import './index.scss'
 const COMPONENT_NAME = 'main'
 
 export default ({
-  entryPosts = [],
 }: {
-  entryPosts: Post[]
 }) => {
   return <>
     <div className={COMPONENT_NAME}>
@@ -74,22 +66,6 @@ export default ({
           </li>
         </ul>
       </section>
-
-      <section>
-        <h2>thoughts</h2>
-        <ul>
-          {entryPosts.map(post => (
-            <li key={post.url}>
-              <span className="date">
-                {new Date(post.date).toISOString().split('T')[0]}
-              </span>
-              <a href={post.url}>{post.name}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <Board posts={entryPosts} />
     </div>
   </>
 }

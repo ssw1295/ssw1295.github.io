@@ -1,1 +1,1 @@
-export type ValidRouteBase = '' | 'entry'
+export type ValidRouteBase = '' | 'entries' | 'entry'

@@ -1,7 +1,4 @@
-import {
-  useEffect,
-  useState,
-} from 'react'
+import _ from 'lodash'
 
 import HamburgerMenu from './HamburgerMenu/index'
 import ThemeToggle from './ThemeToggle/index'
@@ -37,9 +34,9 @@ export default function Header({
           }}
         >Career💼</button>
         <button
-          className={routeBase === 'entry' ? 'active' : ''}
+          className={_.includes(['entries', 'entry'], routeBase) ? 'active' : ''}
           onClick={() => {
-            window.location.href = '/posts'
+            window.location.href = '/entries'
           }}
         >Posts📝</button>
       </div>

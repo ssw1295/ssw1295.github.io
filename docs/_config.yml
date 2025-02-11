@@ -36,6 +36,11 @@ defaults:
     values:
       layout: "page-main"
   - scope:
+      path: "entries.md"
+      type: "pages"
+    values:
+      layout: "page-entries"
+  - scope:
       path: ""
       type: "entry"
     values:

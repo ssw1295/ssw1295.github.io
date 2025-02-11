@@ -3,6 +3,7 @@ import _ from 'lodash'
 
 import PageWrapper from '@/components/PageWrapper'
 import Main from './pages/Main'
+import Entries from './pages/Entries'
 import Entry from './pages/Entry'
 
 import './index.scss'
@@ -17,6 +18,7 @@ import {
 
 const VALID_ROUTE_BASES: ValidRouteBase[] = [
   '',
+  'entries',
   'entry',
 ]
 
@@ -70,7 +72,12 @@ const pageComponents: {
 } = {
   '': () => {
     return (
-      <Main
+      <Main />
+    )
+  },
+  'entries': () => {
+    return (
+      <Entries
         entryPosts={entryPosts}
       />
     )
