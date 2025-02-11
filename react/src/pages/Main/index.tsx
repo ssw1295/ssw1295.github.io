@@ -1,5 +1,7 @@
 import myImage from '@/assets/images/seo.png'
 
+import githubImage from '@/assets/images/github.png'
+
 import './index.scss'
 
 const COMPONENT_NAME = 'main'
@@ -9,17 +11,8 @@ export default ({
 }) => {
   return <>
     <div className={COMPONENT_NAME}>
-      {/* <h1
-        className="title"
-      >
-        sangwon's dev log
-      </h1> */}
-
-      <section
-        className="profile-card"
-      >
-        {/* <h2>profile</h2> */}
-        <h2>
+      <div className="left-side">
+        <div className="profile-area">
           <img
             src={myImage}
             alt="my-image"
@@ -30,42 +23,50 @@ export default ({
               aspectRatio: '1/1',   // 정사각형 비율 강제
             }}
           />
-        </h2>
-        <ul>
-          <li>
-            <span className="label">이름:</span>
-            서상원
-          </li>
-          <li>
-            <span className="label">직무:</span>
-            웹 백엔드/프론트엔드 엔지니어
-          </li>
-          <li>
-            <span className="label">학력:</span>
-            국립공주대학교 전자공학 (학사)
-          </li>
-          <li>
-            <span className="label">직장:</span>
-            <a href="https://www.coupang.com" target="_blank" rel="noopener noreferrer">큐리어드</a>
-          </li>
-          <li>
-            <span className="label">거주:</span>
-            서울특별시 동작구 신대방동
-          </li>
-          <li>
-            <span className="label">이메일:</span>
-            <a href="mailto:sangwon.seo@coupang.com">sangwon.seo@coupang.com</a>
-          </li>
-          <li>
-            <span className="label">GitHub:</span>
-            <a href="https://github.com/SangwonSeo" target="_blank" rel="noopener noreferrer">@SangwonSeo</a>
-          </li>
-          <li>
-            <span className="label">Powered by:</span>
-            Jekyll, React
-          </li>
-        </ul>
-      </section>
+        </div>
+        <div className="info-area">
+          <table>
+            <tr>
+              <td>이름:</td>
+              <td>서상원</td>
+            </tr>
+            <tr>
+              <td>학력:</td>
+              <td>국립공주대학교 전자공학</td>
+            </tr>
+            <tr>
+              <td>직무:</td>
+              <td>웹 백엔드/프론트엔드 엔지니어</td>
+            </tr>
+            <tr>
+              <td>현직장:</td>
+              <td><a href="http://www.curioud.com/home" target="_blank" rel="noopener noreferrer">큐리어드</a></td>
+            </tr>
+            <tr>
+              <td>거주:</td>
+              <td>서울특별시 동작구</td>
+            </tr>
+            <tr>
+              <td>이메일:</td>
+              <td><a href="mailto:sw_1295@naver.com">sw_1295@naver.com</a></td>
+            </tr>
+            <tr>
+              <td>GitHub:</td>
+              <td><a href="https://github.com/ssw1295" target="_blank" rel="noopener noreferrer">@ssw1295</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div className="right-side">
+        <div
+          className="introduce-area"
+        >
+          프론트엔드, 백엔드, 클라우드 등 <br />
+          여러 기술을 사용해 웹 서비스를 개발해왔습니다. <br />
+          현재는 큐리어드에서 웹 엔지니어로 일하고 있습니다.
+        </div>
+      </div>
     </div>
   </>
 }

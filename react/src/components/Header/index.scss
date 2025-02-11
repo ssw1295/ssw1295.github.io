@@ -2,12 +2,13 @@
 
 .main-header {
   width: 100%;
+  font-size: 22px;
   background-color: var(--background-color); // 배경색 추가
   z-index: 100; // 다른 요소들 위에 표시
   display: flex;
   justify-content: space-between;
 
-  margin: 40px 0px;
+  margin: 50px 0px;
 
   .header-left button {
     margin-right: 10px;
@@ -22,7 +23,6 @@
   button {
     color: var(--title-color);
 
-    font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;

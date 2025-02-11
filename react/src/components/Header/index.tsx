@@ -26,19 +26,19 @@ export default function Header({
           onClick={() => {
             window.location.href = '/'
           }}
-        >Profile😊</button>
+        >profile😊</button>
         <button
           // className={routeBase === '' ? 'active' : ''}
           onClick={() => {
             window.location.href = '/career'
           }}
-        >Career💼</button>
+        >career💼</button>
         <button
           className={_.includes(['entries', 'entry'], routeBase) ? 'active' : ''}
           onClick={() => {
             window.location.href = '/entries'
           }}
-        >Posts📝</button>
+        >posts📝</button>
       </div>
       <div
         className="header-right"
