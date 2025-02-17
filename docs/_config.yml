@@ -18,8 +18,7 @@ description: >
   results) and in your feed.xml site description.
 
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections_dir: collections
 
