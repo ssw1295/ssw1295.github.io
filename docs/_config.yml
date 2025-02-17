@@ -48,3 +48,7 @@ defaults:
       type: "pages"
     values:
       layout: "page-json"
+  - scope:
+      path: ""
+      values:
+        cache-control: "no-cache, no-store, must-revalidate"
