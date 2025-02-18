@@ -1,0 +1,4 @@
+Sitemap: https://ssw1295.github.io/sitemap.xml
+
+User-agent: *
+Disallow:
