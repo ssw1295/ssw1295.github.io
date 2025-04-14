@@ -1,4 +1,4 @@
-Sitemap: https://ssw1295.github.io/sitemap.xml
+Sitemap: https://www.seosangwon.com/sitemap.xml
 
 User-agent: *
 Disallow:
