@@ -63,6 +63,12 @@ for i in range(10):
 
 <img src="_assets/bar/2024-09-02-10-22-41.png" width="75%" />
 
+![alt text](<../../../../assets/entry/bar/스크린샷 2025-02-02 153321.png>)?
+![alt text]({{ "../../../../assets/entry/bar/스크린샷 2025-02-02 153321.png" | absolute_url }})
+![](2025-04-16-12-40-32.png)
+
+
+
 나는 이것에 대해 크게 혼동할 수 밖에 없었다..
 
 ### An h3 header ###
