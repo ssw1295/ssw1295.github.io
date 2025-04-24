@@ -26,34 +26,36 @@ export default ({
         </div>
         <div className="info-area">
           <table>
-            <tr>
-              <td>이름:</td>
-              <td>서상원</td>
-            </tr>
-            <tr>
-              <td>학력:</td>
-              <td>국립공주대학교 전자공학</td>
-            </tr>
-            <tr>
-              <td>직무:</td>
-              <td>웹 백엔드/프론트엔드 엔지니어</td>
-            </tr>
-            <tr>
-              <td>현직장:</td>
-              <td><a href="http://www.curioud.com/home" target="_blank" rel="noopener noreferrer">큐리어드</a></td>
-            </tr>
-            <tr>
-              <td>거주:</td>
-              <td>서울특별시 동작구</td>
-            </tr>
-            <tr>
-              <td>이메일:</td>
-              <td><a href="mailto:sw_1295@naver.com">sw_1295@naver.com</a></td>
-            </tr>
-            <tr>
-              <td>GitHub:</td>
-              <td><a href="https://github.com/ssw1295" target="_blank" rel="noopener noreferrer">@ssw1295</a></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>이름:</td>
+                <td>서상원</td>
+              </tr>
+              <tr>
+                <td>학력:</td>
+                <td>국립공주대학교 전자공학</td>
+              </tr>
+              <tr>
+                <td>직무:</td>
+                <td>웹 백엔드/프론트엔드 엔지니어</td>
+              </tr>
+              <tr>
+                <td>현직장:</td>
+                <td><a href="http://www.curioud.com/home" target="_blank" rel="noopener noreferrer">큐리어드</a></td>
+              </tr>
+              <tr>
+                <td>거주:</td>
+                <td>서울특별시 동작구</td>
+              </tr>
+              <tr>
+                <td>이메일:</td>
+                <td><a href="mailto:sw_1295@naver.com">sw_1295@naver.com</a></td>
+              </tr>
+              <tr>
+                <td>GitHub:</td>
+                <td><a href="https://github.com/ssw1295" target="_blank" rel="noopener noreferrer">@ssw1295</a></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
