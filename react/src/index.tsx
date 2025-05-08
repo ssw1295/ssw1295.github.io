@@ -41,6 +41,8 @@ if (!rootEl) {
   throw new Error('no root element for render react app')
 }
 
+const contentEl = document.getElementById('content')
+
 
 const entries = await fetch('/json/entries.json', {
   method: 'GET',
@@ -83,7 +85,7 @@ const pageComponents: {
     )
   },
   'entry': () => {
-    const entryContentEl = rootEl.querySelector('#content')
+    const entryContentEl = contentEl
     if (!entryContentEl) {
       throw new Error('no content element for entry page')
     }
