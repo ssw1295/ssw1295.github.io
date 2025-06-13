@@ -8,3 +8,18 @@
     <li><a href="/entries" title="posts">포스트</a></li>
   </ul>
 </nav>
+
+<nav aria-label="포스트 목록">
+  <ul>
+    {% for entry in site.entry %}
+    <li>
+      <a href="{{ entry.url }}" title="{{ entry.title }}">
+        {{ entry.title }}
+      </a>
+      <time datetime="{{ entry.date | date_to_xmlschema }}">
+        {{ entry.date | date: "%Y-%m-%d" }}
+      </time>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
