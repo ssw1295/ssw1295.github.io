@@ -41,16 +41,30 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.module\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]_[local]-[hash:base64:5]',
+                namedExport: false,
+              },
+              esModule: true,
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
-        test: /\.scss$/, // SCSS 파일을 처리하는 규칙 추가
+        test: /\.(css|scss)$/,
+        exclude: /\.module\.scss$/,
         use: [
-          'style-loader', // CSS를 <style> 태그로 삽입
-          'css-loader',   // CSS 파일을 JavaScript 모듈로 변환
-          'sass-loader',  // SCSS 파일을 CSS로 변환
-        ],
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,

@@ -4,7 +4,7 @@ import Footer from './Footer/index'
 import myImage from '@/assets/images/seo.png'
 import githubImage from '@/assets/images/github.png'
 
-import './index.scss'
+import styles from './index.module.scss'
 
 const COMPONENT_NAME = 'main'
 
@@ -12,7 +12,7 @@ export default ({
 }: {
 }) => {
   return <>
-    <div className={COMPONENT_NAME}>
+    <div className={styles.main}>
       <Header />
 
       <div className="left-side">
