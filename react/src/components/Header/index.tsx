@@ -12,9 +12,9 @@ import {
 const COMPONENT_NAME = 'main-header'
 
 export default function Header({
-  routeBase,
+  // routeBase,
 }: {
-  routeBase: ValidRouteBase
+  // routeBase: ValidRouteBase
 }) {
   return <>
     <div className={COMPONENT_NAME}>
@@ -22,7 +22,7 @@ export default function Header({
         className="header-left"
       >
         <button
-          className={routeBase === '' ? 'active' : ''}
+          // className={routeBase === '' ? 'active' : ''}
           onClick={() => {
             window.location.href = '/'
           }}
@@ -34,7 +34,7 @@ export default function Header({
           }}
         >career💼</button>
         <button
-          className={_.includes(['entries', 'entry'], routeBase) ? 'active' : ''}
+          // className={_.includes(['entries', 'entry'], routeBase) ? 'active' : ''}
           onClick={() => {
             window.location.href = '/entries'
           }}

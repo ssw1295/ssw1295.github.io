@@ -1,6 +1,3 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-
 import './index.scss'
 
 import {
@@ -18,13 +15,7 @@ export default ({
 }) => {
   return <>
     <div className={COMPONENT_NAME}>
-      <Header
-        routeBase={routeBase}
-      />
-
       {children}
-
-      <Footer />
     </div>
   </>
 }

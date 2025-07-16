@@ -1,5 +1,7 @@
-import myImage from '@/assets/images/seo.png'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
+import myImage from '@/assets/images/seo.png'
 import githubImage from '@/assets/images/github.png'
 
 import './index.scss'
@@ -11,6 +13,8 @@ export default ({
 }) => {
   return <>
     <div className={COMPONENT_NAME}>
+      <Header />
+
       <div className="left-side">
         <div className="profile-area">
           <img
@@ -69,6 +73,8 @@ export default ({
           현재는 큐리어드에서 웹 엔지니어로 일하고 있습니다.
         </div>
       </div>
+
+      <Footer />
     </div>
   </>
 }
