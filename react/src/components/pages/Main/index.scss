@@ -1,78 +1,16 @@
 .main {
-  max-width: 1200px;
-  margin: 0 auto;
-
-  // border: 1px solid gray;
-
-  // display: flex;
-  justify-content: center;
-
-  .left-side, .right-side {
-    width: 50%;
+  .content {
+    width: 1200px;
+    margin: 0 auto;
   }
 
-
-  .profile-area {
-    padding-top: 100px;
+  .footer {
+    width: 1200px;
+    margin: 0 auto;
   }
 
-  .left-side {
-    // 오른쪽 면에만 볼더, 길이도 좀 짧게
-    border-right: 0.5px solid var(--secondary-color);
-
-    .info-area {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .info-area {
-      table {
-        display: block;
-        width: 65%;
-        margin-top: 20px;
-        font-size: 16px;
-        color: var(--text-color);
-        border-collapse: collapse;
-
-        tr {
-          height: 34px; // tr 높이 증가
-        }
-
-        td:nth-child(1) {
-          width: 25%;
-          color: var(--secondary-color);
-        }
-        td:nth-child(2) {
-          width: 75%;
-          color: var(--text-color);
-        }
-      }
-    }
-  }
-
-  .right-side {
-    border-left: 0.5px solid var(--secondary-color);
-
-    // 텍스트가 네모 정 가운데
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .introduce-area {
-      text-align: center;
-      font-size: 14px;
-      width: 90%;
-    }
-  }
-
-  // 링크 스타일
-  a {
-    color: var(--link-color);
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
+  .header {
+    width: 1200px;
+    margin: 0 auto;
   }
 }

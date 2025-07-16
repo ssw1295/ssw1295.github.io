@@ -1,0 +1,32 @@
+.rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+
+  .rain-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .rain-drop {
+    position: absolute;
+    color: #6b7280;
+    opacity: 0.6;
+    font-size: 14px;
+    animation: rain-fall 0.5s linear infinite; /* 애니메이션 시간을 0.5초로 단축 */
+  }
+
+  @keyframes rain-fall {
+    0% {
+      transform: translate(-100px, -100px);
+    }
+    100% {
+      transform: translate(100px, 100vh);
+    }
+  }
+}

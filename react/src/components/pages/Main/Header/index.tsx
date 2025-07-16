@@ -9,7 +9,7 @@ import {
   ValidRouteBase,
 } from '@/types/route'
 
-const COMPONENT_NAME = 'main-header'
+const COMPONENT_NAME = 'header'
 
 export default function Header({
   // routeBase,
@@ -49,6 +49,9 @@ export default function Header({
         <button
           onClick={() => handleClickScrollToTarget('projects')}
         >projects/</button>
+        <button
+          onClick={() => handleClickScrollToTarget('contact')}
+        >contact/</button>
       </div>
     </div>
   </>
