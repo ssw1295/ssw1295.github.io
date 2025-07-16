@@ -2,9 +2,9 @@ import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
 import PageWrapper from '@/components/PageWrapper'
-import Main from './pages/Main'
-import Entries from './pages/Entries'
-import Entry from './pages/Entry'
+import Main from './components/pages/Main'
+import Entries from './components/pages/Entries'
+import Entry from './components/pages/Entry'
 
 import './index.scss'
 
