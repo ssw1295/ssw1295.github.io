@@ -1,5 +1,5 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from './Header/index'
+import Footer from './Footer/index'
 
 import myImage from '@/assets/images/seo.png'
 import githubImage from '@/assets/images/github.png'

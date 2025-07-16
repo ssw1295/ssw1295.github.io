@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
-import PageWrapper from '@/components/commons/PageWrapper'
 import Main from './components/pages/Main'
 import Entries from './components/pages/Entries'
 import Entry from './components/pages/Entry'
@@ -110,10 +109,6 @@ const PageComponent = pageComponents[routeBase]()
 
 ReactDOM.createRoot(rootEl).render(
   <div id="app">
-    <PageWrapper
-      routeBase={routeBase}
-    >
-      {PageComponent}
-    </PageWrapper>
+    {PageComponent}
   </div>
 )
