@@ -38,10 +38,10 @@ declare module '*.css' {
   export default content;
 }
 
-// declare module '*.scss' {
-//   const content: any;
-//   export default content;
-// }
+declare module '*.scss' {
+  const content: any;
+  export default content;
+}
 
 declare module '*.module.scss' {
   const content: { [key: string]: string };

@@ -5,7 +5,7 @@ import Main from './components/pages/Main'
 import Entries from './components/pages/Entries'
 import Entry from './components/pages/Entry'
 
-import './index.scss'
+import '@/scss/base/index.scss'
 
 import {
   Post,

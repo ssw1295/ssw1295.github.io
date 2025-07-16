@@ -63,7 +63,14 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, 'src')]
+              }
+            }
+          }
         ]
       },
       {
