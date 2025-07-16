@@ -1,15 +1,21 @@
 .main-header {
-  width: 100%;
+  width: 1200px;
+  margin: 0 auto;
   font-size: 22px;
-  background-color: var(--background-color); // 배경색 추가
+  background-color: rgba(var(--background-color), 0.8); // 반투명 배경색 추가
+  backdrop-filter: blur(10px); // 블러 효과 추가
   z-index: 100; // 다른 요소들 위에 표시
   display: flex;
   justify-content: space-between;
 
-  margin: 50px 0px;
+  position: fixed; // 고정 위치
+  top: 0; // 맨 위에 고정
+  left: 50%; // 중앙 정렬을 위해 50%로 변경
+  transform: translateX(-50%); // 중앙 정렬을 위한 변환
+  padding: 20px 5px; // 여백 추가
 
-  .header-left button {
-    margin-right: 10px;
+  .header-right button {
+    margin-left: 16px;
 
     &.active {
       opacity: 1;

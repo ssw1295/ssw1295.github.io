@@ -16,34 +16,39 @@ export default function Header({
 }: {
   // routeBase: ValidRouteBase
 }) {
+  const handleClickScrollToTarget = (target: string) => {
+    const targetElement = document.getElementById(target)
+
+    if (!!targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }
+
   return <>
     <div className={COMPONENT_NAME}>
       <div
         className="header-left"
       >
-        <button
-          // className={routeBase === '' ? 'active' : ''}
-          onClick={() => {
-            window.location.href = '/'
-          }}
-        >profile😊</button>
-        <button
-          // className={routeBase === '' ? 'active' : ''}
-          onClick={() => {
-            window.location.href = '/career'
-          }}
-        >career💼</button>
-        <button
-          // className={_.includes(['entries', 'entry'], routeBase) ? 'active' : ''}
-          onClick={() => {
-            window.location.href = '/entries'
-          }}
-        >posts📝</button>
+        <ThemeToggle />
       </div>
       <div
         className="header-right"
       >
-        <ThemeToggle />
+        <button
+          onClick={() => handleClickScrollToTarget('profile')}
+        >profile/</button>
+        <button
+          onClick={() => handleClickScrollToTarget('skills')}
+        >skills/</button>
+        <button
+          onClick={() => handleClickScrollToTarget('career')}
+        >career/</button>
+        <button
+          onClick={() => handleClickScrollToTarget('projects')}
+        >projects/</button>
       </div>
     </div>
   </>

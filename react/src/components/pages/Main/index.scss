@@ -1,4 +1,7 @@
 .main {
+  max-width: 1200px;
+  margin: 0 auto;
+
   // border: 1px solid gray;
 
   // display: flex;
@@ -8,17 +11,19 @@
     width: 50%;
   }
 
+
+  .profile-area {
+    padding-top: 100px;
+  }
+
   .left-side {
     // 오른쪽 면에만 볼더, 길이도 좀 짧게
     border-right: 0.5px solid var(--secondary-color);
 
-    .profile-area, .info-area {
+    .info-area {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .profile-area {
     }
 
     .info-area {
