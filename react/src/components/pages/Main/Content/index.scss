@@ -1,5 +1,8 @@
+@import '@/scss/variables.scss';
+
 .content {
   > div {
-    margin-top: 80px;
+    padding-top: 100px;
+    // border-bottom: 1px solid var(--secondary-color);
   }
 }

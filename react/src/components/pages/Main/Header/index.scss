@@ -22,6 +22,11 @@
     }
   }
 
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
   button {
     color: var(--title-color);
 

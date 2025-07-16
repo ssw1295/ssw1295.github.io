@@ -12,7 +12,7 @@ export default ({
       {/* 프로필 */}
       <div>
         <div className="left-side">
-          <div>
+          <div className="info-area">
             <img
               src={myImage}
               alt="my-image"

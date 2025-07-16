@@ -3,11 +3,18 @@ import './index.scss'
 const COMPONENT_NAME = 'rain'
 
 export default ({
+  isRaining = false,
 }: {
+  isRaining?: boolean
 }) => {
   // 빗방울 생성 함수
   const createRaindrops = () => {
     const drops: JSX.Element[] = []
+
+    if (!isRaining) {
+      return drops
+    }
+
     const characters = ['|', '᎐', '|', '.']  // 빗방울로 사용할 문자들
 
     Array.from({length: 50}).forEach((_, i) => {  // 50개의 빗방울 생성

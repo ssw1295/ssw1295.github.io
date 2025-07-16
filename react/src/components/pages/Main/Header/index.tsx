@@ -13,8 +13,12 @@ const COMPONENT_NAME = 'header'
 
 export default function Header({
   // routeBase,
+  isRaining,
+  onChangeIsRaining,
 }: {
   // routeBase: ValidRouteBase
+  isRaining: boolean
+  onChangeIsRaining: (isRaining: boolean) => void
 }) {
   const handleClickScrollToTarget = (target: string) => {
     const targetElement = document.getElementById(target)
@@ -33,6 +37,11 @@ export default function Header({
         className="header-left"
       >
         <ThemeToggle />
+        <div>
+          <button
+            onClick={() => onChangeIsRaining(!isRaining)}
+          >{isRaining ? '☂️' : '🌂'}</button>
+        </div>
       </div>
       <div
         className="header-right"

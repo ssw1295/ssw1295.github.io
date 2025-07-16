@@ -1,4 +1,11 @@
 .profile {
+  > div {
+    display: flex; // 좌우 배치를 위한 flex 추가
+    flex-direction: row; // 가로 방향 배치 명시
+  }
+
+  padding: 0 60px;
+
   .left-side, .right-side {
     width: 50%;
   }
@@ -9,7 +16,7 @@
 
   .left-side {
     // 오른쪽 면에만 볼더, 길이도 좀 짧게
-    border-right: 0.5px solid var(--secondary-color);
+    // border-right: 0.5px solid var(--secondary-color);
 
     .info-area {
       display: flex;
@@ -43,7 +50,7 @@
   }
 
   .right-side {
-    border-left: 0.5px solid var(--secondary-color);
+    // border-left: 0.5px solid var(--secondary-color);
 
     // 텍스트가 네모 정 가운데
     display: flex;
@@ -52,7 +59,7 @@
 
     .introduce-area {
       text-align: center;
-      font-size: 14px;
+      font-size: 16px;
       width: 90%;
     }
   }
