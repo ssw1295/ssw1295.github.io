@@ -1,0 +1,17 @@
+.section-wrapper {
+  display: inline-block;
+  width: 100%;
+
+  .title {
+    font-size: 24px;
+  }
+
+  .content {
+    // padding: 20px 80px;
+    padding: 20px 40px;
+  }
+
+  padding-top: 80px;
+
+  // border-bottom: 1px solid var(--secondary-color);
+}

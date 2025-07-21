@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import $ from 'jquery'
 
 import HamburgerMenu from './HamburgerMenu/index'
 import ThemeToggle from './ThemeToggle/index'
@@ -20,11 +21,16 @@ export default function Header({
   isRaining: boolean
   onChangeIsRaining: (isRaining: boolean) => void
 }) {
-  const handleClickScrollToTarget = (target: string) => {
-    const targetElement = document.getElementById(target)
+  const handleClickScrollToTarget = (title: string) => {
+    const titleValue = _.lowerCase(title)
 
-    if (!!targetElement) {
-      targetElement.scrollIntoView({
+    const $sectionWrapper = $(`.section-wrapper`)
+    const $targetElement = _.find($sectionWrapper, (section) => {
+      return $(section).find(`#${titleValue}`).length > 0
+    })
+
+    if (!!$targetElement) {
+      $targetElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       })
@@ -50,14 +56,14 @@ export default function Header({
           onClick={() => handleClickScrollToTarget('profile')}
         >profile/</button>
         <button
-          onClick={() => handleClickScrollToTarget('skills')}
-        >skills/</button>
-        <button
           onClick={() => handleClickScrollToTarget('career')}
         >career/</button>
         <button
           onClick={() => handleClickScrollToTarget('projects')}
         >projects/</button>
+        <button
+          onClick={() => handleClickScrollToTarget('skills')}
+        >skills/</button>
         <button
           onClick={() => handleClickScrollToTarget('contact')}
         >contact/</button>

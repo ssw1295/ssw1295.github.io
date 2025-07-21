@@ -10,7 +10,7 @@
   top: 0; // 맨 위에 고정
   left: 50%; // 중앙 정렬을 위해 50%로 변경
   transform: translateX(-50%); // 중앙 정렬을 위한 변환
-  padding: 20px 5px; // 여백 추가
+  padding: 20px 0px; // 여백 추가
 
   .header-right button {
     margin-left: 16px;
