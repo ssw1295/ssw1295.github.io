@@ -14,6 +14,7 @@ export default ({
         <div className="left-side">
           <div className="info-area">
             <img
+              className="profile-image"
               src={myImage}
               alt="my-image"
               width={240}

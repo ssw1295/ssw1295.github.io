@@ -1,2 +1,20 @@
 .career {
+  font-size: 18px;
+
+  tr {
+    height: 40px;
+
+    td:nth-child(1) {
+      width: 10%;
+      text-align: center;
+    }
+
+    td:nth-child(2) {
+      width: 5%;
+      text-align: center;
+    }
+
+    td:nth-child(3) {
+    }
+  }
 }
