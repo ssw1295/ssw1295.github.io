@@ -2,6 +2,10 @@ import {
   useState,
 } from 'react'
 import _ from 'lodash'
+import {
+  motion,
+  useDragControls,
+} from 'framer-motion'
 
 import './index.scss'
 
@@ -34,7 +38,7 @@ const PROJECT_LIST: {
       난 상원
       너는 누구야?
     `}</div>),
-    skills: [''],
+    skills: [],
     images: [
       xelfEditor1,
       xelfEditor2,
@@ -45,6 +49,42 @@ const PROJECT_LIST: {
 export default ({
 }: {
 }) => {
+  // 각 프로젝트 요소별 표시할 이미지 인덱스
+  const [
+    currentImageIndexes,
+    setCurrentImageIndexes,
+  ] = useState<(number | null)[]>(
+    _.chain(PROJECT_LIST)
+      .map((project) => {
+        return !!project.images.length ? 0 : null
+      })
+      .value()
+  )
+
+  const handleClickMoveImage = (projectIndex: number, isPrev: boolean) => {
+    const currentImageIndex = currentImageIndexes[projectIndex]
+    const maxImageIndex = PROJECT_LIST[projectIndex].images.length - 1
+
+    if (currentImageIndex === null) {
+      return
+    }
+
+    const newImageIndex = isPrev
+      ? currentImageIndex === 0
+        ? maxImageIndex
+        : currentImageIndex - 1
+      : currentImageIndex === maxImageIndex
+        ? 0
+        : currentImageIndex + 1
+
+    const newCurrentImageIndexes = _.map(currentImageIndexes, (imageIndex, imageIndexIndex) => {
+      return (imageIndexIndex === projectIndex) ? newImageIndex : imageIndex
+    })
+
+    setCurrentImageIndexes(newCurrentImageIndexes)
+  }
+
+
   const [
     selectedProjectIndexes,
     setSelectedProjectIndexes,
@@ -65,7 +105,7 @@ export default ({
 
   return <>
     <div className={COMPONENT_NAME} id={COMPONENT_NAME}>
-      {_.map(PROJECT_LIST, (project, index) => {
+      {_.map(PROJECT_LIST, (project, projectIndex) => {
         const {
           title,
           period,
@@ -76,33 +116,50 @@ export default ({
         return (
           <div
             className='project'
-            key={index}
+            key={projectIndex}
           >
             {/* 제목 */}
             <div
               className='title'
-              onClick={() => handleClickToggleProjectElement(index)}
+              onClick={() => handleClickToggleProjectElement(projectIndex)}
             >
-              <span className='arrow'>{_.includes(selectedProjectIndexes, index) ? '▼' : '▶'} </span>
+              <span className='arrow'>{_.includes(selectedProjectIndexes, projectIndex) ? '▼' : '▶'} </span>
               <span>{title}</span>
             </div>
 
             {/* 토글되는 디테일 */}
-            {_.includes(selectedProjectIndexes, index) && (
-              <div className='detail'>
+            {_.includes(selectedProjectIndexes, projectIndex) && (
+              <motion.div
+                className='detail'
+              >
                 <div className='left-side'>
                   <div className='period'>{period}</div>
                   {description}
                 </div>
                 <div className='right-side'>
-                  {_.map(images, (image, imageIndex) => (
-                    <img
-                      key={imageIndex}
-                      src={image}
-                    />
-                  ))}
+                  {/* 이미지 슬라이더 */}
+                  <div>
+                    {currentImageIndexes[projectIndex] !== null && <motion.div
+                      key={currentImageIndexes[projectIndex]}
+                      initial={{ opacity: 0, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    >
+                      <img
+                        src={images[currentImageIndexes[projectIndex]!]}
+                      />
+                    </motion.div>}
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => handleClickMoveImage(projectIndex, true)}
+                    >이전</button>
+                    <button
+                      onClick={() => handleClickMoveImage(projectIndex, false)}
+                    >다음</button>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             )}
           </div>
         )
