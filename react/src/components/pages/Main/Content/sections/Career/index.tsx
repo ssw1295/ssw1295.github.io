@@ -69,14 +69,16 @@ export default ({
     <div className={COMPONENT_NAME} id={COMPONENT_NAME}>
       <table>
         <tbody>
-          {_.map(_.reverse(CAREER_LIST), (career) => {
+          {_.map([...CAREER_LIST].reverse(), (career, index) => {
             const {
               date,
               description,
             } = career
 
             return (
-              <tr>
+              <tr
+                key={index}
+              >
                 <td>{date}</td>
                 <td>|</td>
                 <td>{description}</td>
