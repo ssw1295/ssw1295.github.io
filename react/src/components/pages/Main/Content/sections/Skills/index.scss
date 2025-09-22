@@ -1,2 +1,39 @@
 .skills {
+  position: relative;
+  overflow: hidden;
+
+  .skills-container {
+    font-size: 20px;
+    line-height: 60px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    white-space: nowrap;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 1;
+    }
+
+    // &::before {
+    //   left: 0;
+    //   background: linear-gradient(to right, lightgray, transparent);
+    // }
+    // &::after {
+    //   right: 0;
+    //   background: linear-gradient(to left, lightgray, transparent);
+    // }
+  }
+
+  .skills-reaction {
+    font-size: 42px;
+    text-align: center;
+  }
 }

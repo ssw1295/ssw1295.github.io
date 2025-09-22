@@ -11,7 +11,7 @@ import './index.scss'
 
 import {
   Skill,
-} from '@/types/pages/main'
+} from '@/types/skill'
 
 // 구 셀프
 import oldXelf1 from '@/assets/projects/구셀프/구셀프 (1).png'
@@ -109,7 +109,7 @@ const PROJECT_LIST: {
   period: string,
   description: JSX.Element,
   // skills: Skill[],
-  skills: string[],
+  skills: Skill[],
   images: string[],
 }[] = [
   {
