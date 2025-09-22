@@ -115,7 +115,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! framer-motion */ \"./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ \"./src/components/pages/Main/Content/sections/Projects/index.scss\");\n/* harmony import */ var _assets_projects_xelf_editor_2025_07_21_150424_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/assets/projects/xelf-editor/스크린샷 2025-07-21 150424.png */ \"./src/assets/projects/xelf-editor/스크린샷 2025-07-21 150424.png\");\n/* harmony import */ var _assets_projects_xelf_editor_2025_07_21_150502_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/assets/projects/xelf-editor/스크린샷 2025-07-21 150502.png */ \"./src/assets/projects/xelf-editor/스크린샷 2025-07-21 150502.png\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n\n\n\n\n\n\nconst COMPONENT_NAME = 'projects';\n\n/**\n * 프로젝트 요소\n */\n\nconst PROJECT_LIST = [{\n  title: 'XELF 편집기',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_xelf_editor_2025_07_21_150424_png__WEBPACK_IMPORTED_MODULE_3__, _assets_projects_xelf_editor_2025_07_21_150502_png__WEBPACK_IMPORTED_MODULE_4__]\n}];\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {\n  let {} = _ref;\n  // 각 프로젝트 요소별 표시할 이미지 인덱스\n  const [currentImageIndexes, setCurrentImageIndexes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(lodash__WEBPACK_IMPORTED_MODULE_1___default().chain(PROJECT_LIST).map(project => {\n    return !!project.images.length ? 0 : null;\n  }).value());\n  const handleClickMoveImage = (projectIndex, isPrev) => {\n    const currentImageIndex = currentImageIndexes[projectIndex];\n    const maxImageIndex = PROJECT_LIST[projectIndex].images.length - 1;\n    if (currentImageIndex === null) {\n      return;\n    }\n    const newImageIndex = isPrev ? currentImageIndex === 0 ? maxImageIndex : currentImageIndex - 1 : currentImageIndex === maxImageIndex ? 0 : currentImageIndex + 1;\n    const newCurrentImageIndexes = lodash__WEBPACK_IMPORTED_MODULE_1___default().map(currentImageIndexes, (imageIndex, imageIndexIndex) => {\n      return imageIndexIndex === projectIndex ? newImageIndex : imageIndex;\n    });\n    setCurrentImageIndexes(newCurrentImageIndexes);\n  };\n  const [selectedProjectIndexes, setSelectedProjectIndexes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);\n  const handleClickToggleProjectElement = index => {\n    const isOpend = lodash__WEBPACK_IMPORTED_MODULE_1___default().includes(selectedProjectIndexes, index);\n    if (isOpend) {\n      setSelectedProjectIndexes(lodash__WEBPACK_IMPORTED_MODULE_1___default().filter(selectedProjectIndexes, selectedIndex => selectedIndex !== index));\n    } else {\n      setSelectedProjectIndexes(lodash__WEBPACK_IMPORTED_MODULE_1___default().uniq([...selectedProjectIndexes, index]));\n    }\n  };\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {\n    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"div\", {\n      className: COMPONENT_NAME,\n      id: COMPONENT_NAME,\n      children: lodash__WEBPACK_IMPORTED_MODULE_1___default().map(PROJECT_LIST, (project, projectIndex) => {\n        const {\n          title,\n          period,\n          description,\n          images\n        } = project;\n        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(\"div\", {\n          className: \"project\",\n          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(\"div\", {\n            className: \"title\",\n            onClick: () => handleClickToggleProjectElement(projectIndex),\n            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(\"span\", {\n              className: \"arrow\",\n              children: [lodash__WEBPACK_IMPORTED_MODULE_1___default().includes(selectedProjectIndexes, projectIndex) ? '▼' : '▶', \" \"]\n            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"span\", {\n              children: title\n            })]\n          }), lodash__WEBPACK_IMPORTED_MODULE_1___default().includes(selectedProjectIndexes, projectIndex) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_6__.motion.div, {\n            className: \"detail\",\n            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(\"div\", {\n              className: \"left-side\",\n              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"div\", {\n                className: \"period\",\n                children: period\n              }), description]\n            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(\"div\", {\n              className: \"right-side\",\n              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"div\", {\n                children: currentImageIndexes[projectIndex] !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_6__.motion.div, {\n                  initial: {\n                    opacity: 0,\n                    y: 0\n                  },\n                  animate: {\n                    opacity: 1,\n                    y: 0\n                  },\n                  transition: {\n                    duration: 0.5,\n                    ease: 'easeInOut'\n                  },\n                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"img\", {\n                    src: images[currentImageIndexes[projectIndex]]\n                  })\n                }, currentImageIndexes[projectIndex])\n              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(\"div\", {\n                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"button\", {\n                  onClick: () => handleClickMoveImage(projectIndex, true),\n                  children: \"\\uC774\\uC804\"\n                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(\"button\", {\n                  onClick: () => handleClickMoveImage(projectIndex, false),\n                  children: \"\\uB2E4\\uC74C\"\n                })]\n              })]\n            })]\n          })]\n        }, projectIndex);\n      })\n    })\n  });\n});\n\n//# sourceURL=webpack://my-app/./src/components/pages/Main/Content/sections/Projects/index.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! framer-motion */ \"./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ \"./src/components/pages/Main/Content/sections/Projects/index.scss\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/assets/projects/구셀프/구셀프 (1).png */ \"./src/assets/projects/구셀프/구셀프 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/assets/projects/구셀프/구셀프 (2).png */ \"./src/assets/projects/구셀프/구셀프 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/assets/projects/구셀프/구셀프 (3).png */ \"./src/assets/projects/구셀프/구셀프 (3).png\");\n/* harmony import */ var _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/assets/projects/구셀프/구셀프 (4).png */ \"./src/assets/projects/구셀프/구셀프 (4).png\");\n/* harmony import */ var _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/assets/projects/구셀프/구셀프 (5).png */ \"./src/assets/projects/구셀프/구셀프 (5).png\");\n/* harmony import */ var _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/assets/projects/구셀프/구셀프 (6).png */ \"./src/assets/projects/구셀프/구셀프 (6).png\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/assets/projects/유클래스 웹/유클래스 웹 (1).png */ \"./src/assets/projects/유클래스 웹/유클래스 웹 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/assets/projects/유클래스 웹/유클래스 웹 (2).png */ \"./src/assets/projects/유클래스 웹/유클래스 웹 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @/assets/projects/유클래스 웹/유클래스 웹 (3).png */ \"./src/assets/projects/유클래스 웹/유클래스 웹 (3).png\");\n/* harmony import */ var _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/assets/projects/유클래스 웹/유클래스 웹 (4).png */ \"./src/assets/projects/유클래스 웹/유클래스 웹 (4).png\");\n/* harmony import */ var _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/assets/projects/유클래스 웹/유클래스 웹 (5).png */ \"./src/assets/projects/유클래스 웹/유클래스 웹 (5).png\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/assets/projects/라포 의회/라포 의회 (1).png */ \"./src/assets/projects/라포 의회/라포 의회 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/assets/projects/라포 의회/라포 의회 (2).png */ \"./src/assets/projects/라포 의회/라포 의회 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/assets/projects/라포 의회/라포 의회 (3).png */ \"./src/assets/projects/라포 의회/라포 의회 (3).png\");\n/* harmony import */ var _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/assets/projects/라포 의회/라포 의회 (4).png */ \"./src/assets/projects/라포 의회/라포 의회 (4).png\");\n/* harmony import */ var _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/assets/projects/라포 의회/라포 의회 (5).png */ \"./src/assets/projects/라포 의회/라포 의회 (5).png\");\n/* harmony import */ var _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/assets/projects/라포 의회/라포 의회 (6).png */ \"./src/assets/projects/라포 의회/라포 의회 (6).png\");\n/* harmony import */ var _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/assets/projects/라포 의회/라포 의회 (7).png */ \"./src/assets/projects/라포 의회/라포 의회 (7).png\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/assets/projects/라포 지피티/라포 지피티 (1).png */ \"./src/assets/projects/라포 지피티/라포 지피티 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/assets/projects/라포 지피티/라포 지피티 (2).png */ \"./src/assets/projects/라포 지피티/라포 지피티 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @/assets/projects/라포 지피티/라포 지피티 (3).png */ \"./src/assets/projects/라포 지피티/라포 지피티 (3).png\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @/assets/projects/마음챙김/마음챙김 (1).png */ \"./src/assets/projects/마음챙김/마음챙김 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @/assets/projects/마음챙김/마음챙김 (2).png */ \"./src/assets/projects/마음챙김/마음챙김 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @/assets/projects/마음챙김/마음챙김 (3).png */ \"./src/assets/projects/마음챙김/마음챙김 (3).png\");\n/* harmony import */ var _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @/assets/projects/마음챙김/마음챙김 (4).png */ \"./src/assets/projects/마음챙김/마음챙김 (4).png\");\n/* harmony import */ var _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @/assets/projects/마음챙김/마음챙김 (5).png */ \"./src/assets/projects/마음챙김/마음챙김 (5).png\");\n/* harmony import */ var _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @/assets/projects/마음챙김/마음챙김 (6).png */ \"./src/assets/projects/마음챙김/마음챙김 (6).png\");\n/* harmony import */ var _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @/assets/projects/마음챙김/마음챙김 (7).png */ \"./src/assets/projects/마음챙김/마음챙김 (7).png\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (1).png */ \"./src/assets/projects/캔버스/캔버스 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (2).png */ \"./src/assets/projects/캔버스/캔버스 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (3).png */ \"./src/assets/projects/캔버스/캔버스 (3).png\");\n/* harmony import */ var _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (4).png */ \"./src/assets/projects/캔버스/캔버스 (4).png\");\n/* harmony import */ var _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (5).png */ \"./src/assets/projects/캔버스/캔버스 (5).png\");\n/* harmony import */ var _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (6).png */ \"./src/assets/projects/캔버스/캔버스 (6).png\");\n/* harmony import */ var _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (7).png */ \"./src/assets/projects/캔버스/캔버스 (7).png\");\n/* harmony import */ var _assets_projects_8_png__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @/assets/projects/캔버스/캔버스 (8).png */ \"./src/assets/projects/캔버스/캔버스 (8).png\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (1).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (2).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (3).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (3).png\");\n/* harmony import */ var _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (4).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (4).png\");\n/* harmony import */ var _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (5).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (5).png\");\n/* harmony import */ var _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (6).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (6).png\");\n/* harmony import */ var _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (7).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (7).png\");\n/* harmony import */ var _assets_projects_8_png__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (8).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (8).png\");\n/* harmony import */ var _assets_projects_9_png__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (9).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (9).png\");\n/* harmony import */ var _assets_projects_10_png__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @/assets/projects/한라 스타티움/한라 스타티움 (10).png */ \"./src/assets/projects/한라 스타티움/한라 스타티움 (10).png\");\n/* harmony import */ var _assets_projects_1_png__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (1).png */ \"./src/assets/projects/라포 게임/라포 게임 (1).png\");\n/* harmony import */ var _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (2).png */ \"./src/assets/projects/라포 게임/라포 게임 (2).png\");\n/* harmony import */ var _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (3).png */ \"./src/assets/projects/라포 게임/라포 게임 (3).png\");\n/* harmony import */ var _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (4).png */ \"./src/assets/projects/라포 게임/라포 게임 (4).png\");\n/* harmony import */ var _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (5).png */ \"./src/assets/projects/라포 게임/라포 게임 (5).png\");\n/* harmony import */ var _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (6).png */ \"./src/assets/projects/라포 게임/라포 게임 (6).png\");\n/* harmony import */ var _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (7).png */ \"./src/assets/projects/라포 게임/라포 게임 (7).png\");\n/* harmony import */ var _assets_projects_8_png__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (8).png */ \"./src/assets/projects/라포 게임/라포 게임 (8).png\");\n/* harmony import */ var _assets_projects_9_png__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (9).png */ \"./src/assets/projects/라포 게임/라포 게임 (9).png\");\n/* harmony import */ var _assets_projects_10_png__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (10).png */ \"./src/assets/projects/라포 게임/라포 게임 (10).png\");\n/* harmony import */ var _assets_projects_11_png__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (11).png */ \"./src/assets/projects/라포 게임/라포 게임 (11).png\");\n/* harmony import */ var _assets_projects_12_png__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (12).png */ \"./src/assets/projects/라포 게임/라포 게임 (12).png\");\n/* harmony import */ var _assets_projects_13_png__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (13).png */ \"./src/assets/projects/라포 게임/라포 게임 (13).png\");\n/* harmony import */ var _assets_projects_14_png__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (14).png */ \"./src/assets/projects/라포 게임/라포 게임 (14).png\");\n/* harmony import */ var _assets_projects_15_png__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (15).png */ \"./src/assets/projects/라포 게임/라포 게임 (15).png\");\n/* harmony import */ var _assets_projects_16_png__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (16).png */ \"./src/assets/projects/라포 게임/라포 게임 (16).png\");\n/* harmony import */ var _assets_projects_17_png__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (17).png */ \"./src/assets/projects/라포 게임/라포 게임 (17).png\");\n/* harmony import */ var _assets_projects_18_png__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (18).png */ \"./src/assets/projects/라포 게임/라포 게임 (18).png\");\n/* harmony import */ var _assets_projects_19_png__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (19).png */ \"./src/assets/projects/라포 게임/라포 게임 (19).png\");\n/* harmony import */ var _assets_projects_20_png__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (20).png */ \"./src/assets/projects/라포 게임/라포 게임 (20).png\");\n/* harmony import */ var _assets_projects_21_png__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (21).png */ \"./src/assets/projects/라포 게임/라포 게임 (21).png\");\n/* harmony import */ var _assets_projects_22_png__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (22).png */ \"./src/assets/projects/라포 게임/라포 게임 (22).png\");\n/* harmony import */ var _assets_projects_23_png__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! @/assets/projects/라포 게임/라포 게임 (23).png */ \"./src/assets/projects/라포 게임/라포 게임 (23).png\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n\n\n\n\n// 구 셀프\n\n\n\n\n\n\n\n// 유클래스 웹\n\n\n\n\n\n\n// 라포 의회\n\n\n\n\n\n\n\n\n// 라포 지피티\n\n\n\n\n// 마음챙김\n\n\n\n\n\n\n\n\n// 캔버스\n\n\n\n\n\n\n\n\n\n// 한라 스타티움\n\n\n\n\n\n\n\n\n\n\n\n// 라포 게임\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nconst COMPONENT_NAME = 'projects';\n\n/**\n * 프로젝트 요소\n */\n\nconst PROJECT_LIST = [{\n  title: 'XELF 에디터',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_3__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_4__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_5__, _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_6__, _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_7__, _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_8__]\n}, {\n  title: '유클래스 웹',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_9__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_10__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_11__, _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_12__, _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_13__]\n}, {\n  title: '라포라포 스퀘어',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_14__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_15__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_16__, _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_17__, _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_18__, _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_19__, _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_20__]\n}, {\n  title: '라포라포 지피티',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_21__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_22__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_23__]\n}, {\n  title: '한양대학교 마음챙김 앱',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_24__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_25__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_26__, _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_27__, _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_28__, _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_29__, _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_30__]\n}, {\n  title: '동아그룹 두클래스 캔버스',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_31__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_32__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_33__, _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_34__, _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_35__, _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_36__, _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_37__, _assets_projects_8_png__WEBPACK_IMPORTED_MODULE_38__]\n}, {\n  title: '한라그룹 스타티움 웹',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_39__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_40__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_41__, _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_42__, _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_43__, _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_44__, _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_45__, _assets_projects_8_png__WEBPACK_IMPORTED_MODULE_46__, _assets_projects_9_png__WEBPACK_IMPORTED_MODULE_47__, _assets_projects_10_png__WEBPACK_IMPORTED_MODULE_48__]\n}, {\n  title: '라포라포 게임',\n  period: '2024.01 - 2024.03',\n  description: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n    style: {\n      whiteSpace: 'pre-line'\n    },\n    children: `\n      안녕\n      난 상원\n      너는 누구야?\n    `\n  }),\n  skills: [],\n  images: [_assets_projects_1_png__WEBPACK_IMPORTED_MODULE_49__, _assets_projects_2_png__WEBPACK_IMPORTED_MODULE_50__, _assets_projects_3_png__WEBPACK_IMPORTED_MODULE_51__, _assets_projects_4_png__WEBPACK_IMPORTED_MODULE_52__, _assets_projects_5_png__WEBPACK_IMPORTED_MODULE_53__, _assets_projects_6_png__WEBPACK_IMPORTED_MODULE_54__, _assets_projects_7_png__WEBPACK_IMPORTED_MODULE_55__, _assets_projects_8_png__WEBPACK_IMPORTED_MODULE_56__, _assets_projects_9_png__WEBPACK_IMPORTED_MODULE_57__, _assets_projects_10_png__WEBPACK_IMPORTED_MODULE_58__, _assets_projects_11_png__WEBPACK_IMPORTED_MODULE_59__, _assets_projects_12_png__WEBPACK_IMPORTED_MODULE_60__, _assets_projects_13_png__WEBPACK_IMPORTED_MODULE_61__, _assets_projects_14_png__WEBPACK_IMPORTED_MODULE_62__, _assets_projects_15_png__WEBPACK_IMPORTED_MODULE_63__, _assets_projects_16_png__WEBPACK_IMPORTED_MODULE_64__, _assets_projects_17_png__WEBPACK_IMPORTED_MODULE_65__, _assets_projects_18_png__WEBPACK_IMPORTED_MODULE_66__, _assets_projects_19_png__WEBPACK_IMPORTED_MODULE_67__, _assets_projects_20_png__WEBPACK_IMPORTED_MODULE_68__, _assets_projects_21_png__WEBPACK_IMPORTED_MODULE_69__, _assets_projects_22_png__WEBPACK_IMPORTED_MODULE_70__, _assets_projects_23_png__WEBPACK_IMPORTED_MODULE_71__]\n}];\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {\n  let {} = _ref;\n  // 각 프로젝트 요소별 표시할 이미지 인덱스\n  const [currentImageIndexes, setCurrentImageIndexes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(lodash__WEBPACK_IMPORTED_MODULE_1___default().chain(PROJECT_LIST).map(project => {\n    return !!project.images.length ? 0 : null;\n  }).value());\n  const handleClickMoveImage = (projectIndex, isPrev) => {\n    const currentImageIndex = currentImageIndexes[projectIndex];\n    const maxImageIndex = PROJECT_LIST[projectIndex].images.length - 1;\n    if (currentImageIndex === null) {\n      return;\n    }\n    const newImageIndex = isPrev ? currentImageIndex === 0 ? maxImageIndex : currentImageIndex - 1 : currentImageIndex === maxImageIndex ? 0 : currentImageIndex + 1;\n    const newCurrentImageIndexes = lodash__WEBPACK_IMPORTED_MODULE_1___default().map(currentImageIndexes, (imageIndex, imageIndexIndex) => {\n      return imageIndexIndex === projectIndex ? newImageIndex : imageIndex;\n    });\n    setCurrentImageIndexes(newCurrentImageIndexes);\n  };\n  const [selectedProjectIndexes, setSelectedProjectIndexes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);\n  const handleClickToggleProjectElement = index => {\n    const isOpend = lodash__WEBPACK_IMPORTED_MODULE_1___default().includes(selectedProjectIndexes, index);\n    if (isOpend) {\n      setSelectedProjectIndexes(lodash__WEBPACK_IMPORTED_MODULE_1___default().filter(selectedProjectIndexes, selectedIndex => selectedIndex !== index));\n    } else {\n      setSelectedProjectIndexes(lodash__WEBPACK_IMPORTED_MODULE_1___default().uniq([...selectedProjectIndexes, index]));\n    }\n  };\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.Fragment, {\n    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n      className: COMPONENT_NAME,\n      id: COMPONENT_NAME,\n      children: lodash__WEBPACK_IMPORTED_MODULE_1___default().map(PROJECT_LIST, (project, projectIndex) => {\n        const {\n          title,\n          period,\n          description,\n          images\n        } = project;\n        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsxs)(\"div\", {\n          className: \"project\",\n          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsxs)(\"div\", {\n            className: \"title\",\n            onClick: () => handleClickToggleProjectElement(projectIndex),\n            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsxs)(\"span\", {\n              className: \"arrow\",\n              children: [lodash__WEBPACK_IMPORTED_MODULE_1___default().includes(selectedProjectIndexes, projectIndex) ? '▼' : '▶', \" \"]\n            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"span\", {\n              children: title\n            })]\n          }), lodash__WEBPACK_IMPORTED_MODULE_1___default().includes(selectedProjectIndexes, projectIndex) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_73__.motion.div, {\n            className: \"detail\",\n            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsxs)(\"div\", {\n              className: \"left-side\",\n              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n                className: \"period\",\n                children: period\n              }), description]\n            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n              className: \"right-side\",\n              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsxs)(\"div\", {\n                className: \"image-slider\",\n                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"div\", {\n                  className: \"image-slider-image\",\n                  children: currentImageIndexes[projectIndex] !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_73__.motion.div, {\n                    initial: {\n                      opacity: 0,\n                      y: 0\n                    },\n                    animate: {\n                      opacity: 1,\n                      y: 0\n                    },\n                    transition: {\n                      duration: 0.5,\n                      ease: 'easeInOut'\n                    },\n                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"img\", {\n                      src: images[currentImageIndexes[projectIndex]]\n                    })\n                  }, currentImageIndexes[projectIndex])\n                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsxs)(\"div\", {\n                  className: \"image-slider-buttons\",\n                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"button\", {\n                    onClick: () => handleClickMoveImage(projectIndex, true),\n                    children: \"\\u25C0\"\n                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_72__.jsx)(\"button\", {\n                    onClick: () => handleClickMoveImage(projectIndex, false),\n                    children: \"\\u25B6\"\n                  })]\n                })]\n              })\n            })]\n          })]\n        }, projectIndex);\n      })\n    })\n  });\n});\n\n//# sourceURL=webpack://my-app/./src/components/pages/Main/Content/sections/Projects/index.tsx?");
 
 /***/ }),
 
@@ -236,7 +236,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `.section-wrapper {\n  font-size: 18px;\n  display: inline-block;\n  width: 100%;\n  padding-top: 80px;\n}\n.section-wrapper .title {\n  font-size: 24px;\n}\n.section-wrapper .content {\n  padding: 20px 100px;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://my-app/./src/components/pages/Main/Content/SectionWrapper/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B2%5D.use%5B2%5D");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `.section-wrapper {\n  font-size: 18px;\n  display: inline-block;\n  width: 100%;\n  padding-top: 80px;\n}\n.section-wrapper .title {\n  font-size: 24px;\n}\n.section-wrapper .content {\n  padding: 20px 60px;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://my-app/./src/components/pages/Main/Content/SectionWrapper/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B2%5D.use%5B2%5D");
 
 /***/ }),
 
@@ -291,7 +291,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `.projects .project .title {\n  height: 40px;\n  font-size: 18px;\n  cursor: pointer;\n}\n.projects .project .detail {\n  font-size: 16px;\n  display: flex;\n  flex-direction: row;\n}\n.projects .project .detail .description {\n  white-space: pre-line;\n}\n.projects .project .detail .left-side {\n  width: 45%;\n}\n.projects .project .detail .right-side {\n  width: 55%;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.projects .project .detail .right-side img {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://my-app/./src/components/pages/Main/Content/sections/Projects/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B2%5D.use%5B2%5D");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `.projects .project .title {\n  height: 40px;\n  font-size: 18px;\n  cursor: pointer;\n}\n.projects .project .detail {\n  font-size: 16px;\n  display: flex;\n  flex-direction: row;\n}\n.projects .project .detail .description {\n  white-space: pre-line;\n}\n.projects .project .detail .left-side {\n  width: 45%;\n}\n.projects .project .detail .right-side {\n  width: 70%;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.projects .project .detail .right-side .image-slider {\n  position: relative;\n}\n.projects .project .detail .right-side .image-slider .image-slider-image img {\n  width: 100%;\n  height: 300px;\n  object-fit: contain;\n}\n.projects .project .detail .right-side .image-slider .image-slider-buttons {\n  align-items: center;\n  padding: 0 10px;\n}\n.projects .project .detail .right-side .image-slider .image-slider-buttons button {\n  font-size: 16px;\n  color: white;\n  background: black;\n  border: none;\n  cursor: pointer;\n  opacity: 0.5;\n  transition: opacity 0.3s;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://my-app/./src/components/pages/Main/Content/sections/Projects/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B2%5D.use%5B2%5D");
 
 /***/ }),
 
@@ -766,25 +766,762 @@ eval("module.exports = __webpack_require__.p + \"b7d37e9cabad4da3794e.png\";\n\n
 
 /***/ }),
 
-/***/ "./src/assets/projects/xelf-editor/스크린샷 2025-07-21 150424.png":
-/*!********************************************************************!*\
-  !*** ./src/assets/projects/xelf-editor/스크린샷 2025-07-21 150424.png ***!
-  \********************************************************************/
+/***/ "./src/assets/projects/구셀프/구셀프 (1).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/구셀프/구셀프 (1).png ***!
+  \*********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"9d648615cbb00c33c9d8.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/xelf-editor/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-07-21_150424.png?");
+eval("module.exports = __webpack_require__.p + \"de97d204ce3668c354d3.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EA%B5%AC%EC%85%80%ED%94%84/%EA%B5%AC%EC%85%80%ED%94%84_(1).png?");
 
 /***/ }),
 
-/***/ "./src/assets/projects/xelf-editor/스크린샷 2025-07-21 150502.png":
-/*!********************************************************************!*\
-  !*** ./src/assets/projects/xelf-editor/스크린샷 2025-07-21 150502.png ***!
-  \********************************************************************/
+/***/ "./src/assets/projects/구셀프/구셀프 (2).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/구셀프/구셀프 (2).png ***!
+  \*********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"e02c04ab28fbb8a8c003.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/xelf-editor/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-07-21_150502.png?");
+eval("module.exports = __webpack_require__.p + \"8503a2dc55a42bb6b9ef.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EA%B5%AC%EC%85%80%ED%94%84/%EA%B5%AC%EC%85%80%ED%94%84_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/구셀프/구셀프 (3).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/구셀프/구셀프 (3).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"cacb25c22fe007a08b95.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EA%B5%AC%EC%85%80%ED%94%84/%EA%B5%AC%EC%85%80%ED%94%84_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/구셀프/구셀프 (4).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/구셀프/구셀프 (4).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"9374233877ad91e737dd.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EA%B5%AC%EC%85%80%ED%94%84/%EA%B5%AC%EC%85%80%ED%94%84_(4).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/구셀프/구셀프 (5).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/구셀프/구셀프 (5).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"db195a3b4efed210720a.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EA%B5%AC%EC%85%80%ED%94%84/%EA%B5%AC%EC%85%80%ED%94%84_(5).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/구셀프/구셀프 (6).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/구셀프/구셀프 (6).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"00258a32fbe460377146.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EA%B5%AC%EC%85%80%ED%94%84/%EA%B5%AC%EC%85%80%ED%94%84_(6).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (1).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (1).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"793858b6cb0cbdf675f6.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(1).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (10).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (10).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"75b2e5486c4adb62f971.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(10).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (11).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (11).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"71a085d491ffacab43a5.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(11).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (12).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (12).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"f10709dcf4ce81e483a1.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(12).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (13).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (13).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"4248a7ef9dc05c0d3fb8.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(13).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (14).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (14).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"0bd0e6ed9d220f49d2ce.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(14).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (15).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (15).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"21860be00b9ec3baa83c.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(15).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (16).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (16).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"eebf38706503011958dc.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(16).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (17).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (17).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"3130ebe5c215750aa650.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(17).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (18).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (18).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"1e35125ab3efeedfd971.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(18).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (19).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (19).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"cd53e795f821daa762f8.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(19).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (2).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (2).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"ca46e94b3ca956af3f96.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (20).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (20).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"551463086c26189a0cd8.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(20).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (21).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (21).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"aa3695b57e7646aa889d.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(21).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (22).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (22).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"497561200d896888db04.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(22).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (23).png":
+/*!**************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (23).png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"6cdc10e8d3e3160bb877.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(23).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (3).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (3).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"942fe9bb002c7ad743ca.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (4).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (4).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"8a9bed3c963725b8b30b.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(4).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (5).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (5).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"1219b4945ec2844b72eb.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(5).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (6).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (6).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"b1aa54fb0fc89cb23c88.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(6).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (7).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (7).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"80c1dee40ce6957a46ae.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(7).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (8).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (8).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"bc77fe966f42bbaf03b5.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(8).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 게임/라포 게임 (9).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 게임/라포 게임 (9).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"97e550f93a56a83d61a7.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84/%EB%9D%BC%ED%8F%AC_%EA%B2%8C%EC%9E%84_(9).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 의회/라포 의회 (1).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 의회/라포 의회 (1).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"ccae66fac5f6642ee97c.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C_(1).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 의회/라포 의회 (2).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 의회/라포 의회 (2).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"65ea5fecbc14f6b14ed1.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 의회/라포 의회 (3).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 의회/라포 의회 (3).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"c3a8aeff2bcbb047ae38.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 의회/라포 의회 (4).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 의회/라포 의회 (4).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"d1ea125f0af77e1c0baf.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C_(4).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 의회/라포 의회 (5).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 의회/라포 의회 (5).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"921535086e1b0eb91b10.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C_(5).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 의회/라포 의회 (6).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 의회/라포 의회 (6).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"4ebfa92627fa2e7fb211.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C_(6).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 의회/라포 의회 (7).png":
+/*!*************************************************!*\
+  !*** ./src/assets/projects/라포 의회/라포 의회 (7).png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"b6bc0c7d9558b933fd93.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C/%EB%9D%BC%ED%8F%AC_%EC%9D%98%ED%9A%8C_(7).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 지피티/라포 지피티 (1).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/라포 지피티/라포 지피티 (1).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"859b978d703cc1b6c2a6.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%A7%80%ED%94%BC%ED%8B%B0/%EB%9D%BC%ED%8F%AC_%EC%A7%80%ED%94%BC%ED%8B%B0_(1).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 지피티/라포 지피티 (2).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/라포 지피티/라포 지피티 (2).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"ea90619cc0cd0c04dc10.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%A7%80%ED%94%BC%ED%8B%B0/%EB%9D%BC%ED%8F%AC_%EC%A7%80%ED%94%BC%ED%8B%B0_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/라포 지피티/라포 지피티 (3).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/라포 지피티/라포 지피티 (3).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"e403ecb13c97b384a546.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%9D%BC%ED%8F%AC_%EC%A7%80%ED%94%BC%ED%8B%B0/%EB%9D%BC%ED%8F%AC_%EC%A7%80%ED%94%BC%ED%8B%B0_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/마음챙김/마음챙김 (1).png":
+/*!***********************************************!*\
+  !*** ./src/assets/projects/마음챙김/마음챙김 (1).png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"d7a954b19fcf534619b3.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80_(1).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/마음챙김/마음챙김 (2).png":
+/*!***********************************************!*\
+  !*** ./src/assets/projects/마음챙김/마음챙김 (2).png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"f3ff8743c023d1da7f80.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/마음챙김/마음챙김 (3).png":
+/*!***********************************************!*\
+  !*** ./src/assets/projects/마음챙김/마음챙김 (3).png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"37c237a96fec6e453394.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/마음챙김/마음챙김 (4).png":
+/*!***********************************************!*\
+  !*** ./src/assets/projects/마음챙김/마음챙김 (4).png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"420c60725c5282053d5b.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80_(4).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/마음챙김/마음챙김 (5).png":
+/*!***********************************************!*\
+  !*** ./src/assets/projects/마음챙김/마음챙김 (5).png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"e4376e3725c3d9a5b675.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80_(5).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/마음챙김/마음챙김 (6).png":
+/*!***********************************************!*\
+  !*** ./src/assets/projects/마음챙김/마음챙김 (6).png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"b881f734550e893e6ba5.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80_(6).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/마음챙김/마음챙김 (7).png":
+/*!***********************************************!*\
+  !*** ./src/assets/projects/마음챙김/마음챙김 (7).png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"911afacdb0e9079a56d7.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80/%EB%A7%88%EC%9D%8C%EC%B1%99%EA%B9%80_(7).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/유클래스 웹/유클래스 웹 (1).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/유클래스 웹/유클래스 웹 (1).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"93004ea2cac7bdd313b8.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9_(1).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/유클래스 웹/유클래스 웹 (2).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/유클래스 웹/유클래스 웹 (2).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"158ae5fd00ad56f0fb8b.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/유클래스 웹/유클래스 웹 (3).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/유클래스 웹/유클래스 웹 (3).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"a4bb2d3151b97b0277e0.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/유클래스 웹/유클래스 웹 (4).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/유클래스 웹/유클래스 웹 (4).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"c552d895f55ef34dd1bc.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9_(4).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/유클래스 웹/유클래스 웹 (5).png":
+/*!***************************************************!*\
+  !*** ./src/assets/projects/유클래스 웹/유클래스 웹 (5).png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"2f458ac457eb0181c1f9.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9/%EC%9C%A0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%9B%B9_(5).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (1).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (1).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"869d7e54ebc0797732b8.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(1).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (2).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (2).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"c69d3e4b0e8966e91a67.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (3).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (3).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"44a8df20d8ac24225c80.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (4).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (4).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"0135e09b01c4ad1691db.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(4).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (5).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (5).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"fddb325b0ab005b758c2.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(5).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (6).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (6).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"6f47e8ca195a85ae4b0b.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(6).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (7).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (7).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"f9687294c2fea41ed0e0.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(7).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/캔버스/캔버스 (8).png":
+/*!*********************************************!*\
+  !*** ./src/assets/projects/캔버스/캔버스 (8).png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"913ab4d56055b8ea9f93.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%EC%BA%94%EB%B2%84%EC%8A%A4/%EC%BA%94%EB%B2%84%EC%8A%A4_(8).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (1).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (1).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"1b2d29dccf9b39e378e3.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(1).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (10).png":
+/*!******************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (10).png ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"05381581fbd03d77807e.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(10).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (2).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (2).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"ad4b6cdec6236bbba983.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(2).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (3).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (3).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"7b643524926c94f9e804.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(3).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (4).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (4).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"ca707f9ab75288ee9269.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(4).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (5).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (5).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"ed7d5bc66a736803c1cf.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(5).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (6).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (6).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"5c0a9b63bb39e41dd877.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(6).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (7).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (7).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"3ce60cdb35ca49536e24.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(7).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (8).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (8).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"c5ce19311c074aa09a6d.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(8).png?");
+
+/***/ }),
+
+/***/ "./src/assets/projects/한라 스타티움/한라 스타티움 (9).png":
+/*!*****************************************************!*\
+  !*** ./src/assets/projects/한라 스타티움/한라 스타티움 (9).png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"4f44fea4177beb3c0da8.png\";\n\n//# sourceURL=webpack://my-app/./src/assets/projects/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80/%ED%95%9C%EB%9D%BC_%EC%8A%A4%ED%83%80%ED%8B%B0%EC%9B%80_(9).png?");
 
 /***/ }),
 
