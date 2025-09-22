@@ -78,6 +78,7 @@ export default ({
             return (
               <tr
                 key={index}
+                className='title'
               >
                 <td>{date}</td>
                 <td>|</td>

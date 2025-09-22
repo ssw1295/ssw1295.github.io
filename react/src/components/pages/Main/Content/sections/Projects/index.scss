@@ -1,13 +1,13 @@
 .projects {
   .project {
     .title {
-      height: 40px;
       font-size: 18px;
+      height: 40px;
       cursor: pointer;
     }
 
     .detail {
-      font-size: 16px;
+      margin-bottom: 32px;
 
       display: flex;
       flex-direction: row;
@@ -21,19 +21,68 @@
 
       .left-side {
         width: 45%;
+
+        .skills {
+          .skill {
+            font-size: smaller;
+            color: var(--text-color);
+            background: var(--secondary-color);
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+          }
+        }
       }
 
       .right-side {
-        width: 55%;
+        padding-left: 20px;
+
+        width: 70%;
 
         justify-content: center;
         align-items: center;
         text-align: center;
 
-        img {
-          width: 100%;
-          height: 300px;
-          object-fit: cover; // 이미지가 컨테이너를 채우도록
+        .image-slider {
+          position: relative;
+
+          .image-slider-image {
+            img {
+              width: 100%;
+              height: 300px;
+              object-fit: contain; // 이미지가 컨테이너를 채우도록
+              box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); // 오른쪽과 아래쪽 그림자
+            }
+          }
+
+          .image-slider-buttons {
+            align-items: center;
+            padding: 0 10px;
+            margin-top: 10px;
+
+            button {
+              padding: 0px 10px;
+              font-size: 16px;
+              color: white;
+              background: black;
+              border: none;
+              cursor: pointer;
+              opacity: 0.5;
+              transition: opacity 0.3s;
+
+              &:hover {
+                opacity: 1;
+              }
+
+              &.image-slider-button-prev {
+                margin-right: 2px;
+              }
+
+              &.image-slider-button-next {
+                margin-left: 2px;
+              }
+            }
+          }
         }
       }
     }
