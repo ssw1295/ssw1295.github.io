@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
 import Main from './components/pages/Main'
+import Troll from './components/pages/Troll'
 import Entries from './components/pages/Entries'
 import Entry from './components/pages/Entry'
 
@@ -18,6 +19,7 @@ import {
 
 const VALID_ROUTE_BASES: ValidRouteBase[] = [
   '',
+  'hello',
   'entries',
   'entry',
 ]
@@ -73,6 +75,11 @@ const pageComponents: {
   [keys in ValidRouteBase]: () => JSX.Element
 } = {
   '': () => {
+    return (
+      <Troll />
+    )
+  },
+  'hello': () => {
     return (
       <Main />
     )
