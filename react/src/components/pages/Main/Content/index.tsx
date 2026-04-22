@@ -27,9 +27,9 @@ export default ({
       <SectionWrapper title="Skills">
         <Skills />
       </SectionWrapper>
-      <SectionWrapper title="Contact">
+      {/* <SectionWrapper title="Contact">
         <Contact />
-      </SectionWrapper>
+      </SectionWrapper> */}
     </div>
   </>
 }

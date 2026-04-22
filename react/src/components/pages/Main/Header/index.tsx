@@ -64,9 +64,9 @@ export default function Header({
         <button
           onClick={() => handleClickScrollToTarget('skills')}
         >skills/</button>
-        <button
+        {/* <button
           onClick={() => handleClickScrollToTarget('contact')}
-        >contact/</button>
+        >contact/</button> */}
       </div>
     </div>
   </>

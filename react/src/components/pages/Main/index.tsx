@@ -18,8 +18,6 @@ export default ({
   const [isRaining, setIsRaining] = useState(false)
 
   return <>
-    <div>sss</div>
-
     <div className={COMPONENT_NAME}>
       <Rain
         isRaining={isRaining}

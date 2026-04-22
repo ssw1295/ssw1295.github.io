@@ -49,6 +49,10 @@ export default ({
                   <td>서울특별시 동작구</td>
                 </tr>
                 <tr>
+                  <td>연락처:</td>
+                  <td>010-2854-1295</td>
+                </tr>
+                <tr>
                   <td>이메일:</td>
                   <td><a href="mailto:sw_1295@naver.com">sw_1295@naver.com</a></td>
                 </tr>
