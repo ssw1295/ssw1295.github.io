@@ -1,5 +1,6 @@
 import {
   useState,
+  useEffect,
 } from 'react'
 import _ from 'lodash'
 import {
@@ -365,6 +366,12 @@ export default ({
     selectedProjectIndexes,
     setSelectedProjectIndexes,
   ] = useState<number[]>([])
+
+  // useEffect(() => {
+  //   setSelectedProjectIndexes(_.map(PROJECT_LIST, (project, projectIndex) => {
+  //     return projectIndex
+  //   }))
+  // }, [])
 
   const handleClickToggleProjectElement = (index: number) => {
     const isOpend = _.includes(selectedProjectIndexes, index)
