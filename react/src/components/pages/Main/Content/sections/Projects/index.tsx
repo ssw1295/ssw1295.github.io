@@ -99,6 +99,26 @@ import rapoGame21 from '@/assets/projects/라포 게임/라포 게임 (21).png'
 import rapoGame22 from '@/assets/projects/라포 게임/라포 게임 (22).png'
 import rapoGame23 from '@/assets/projects/라포 게임/라포 게임 (23).png'
 
+// 라포 스타티움
+import rapoStartium1 from '@/assets/projects/라포 스타티움/라포 스타티움 (1).png'
+import rapoStartium2 from '@/assets/projects/라포 스타티움/라포 스타티움 (2).png'
+import rapoStartium3 from '@/assets/projects/라포 스타티움/라포 스타티움 (3).png'
+import rapoStartium4 from '@/assets/projects/라포 스타티움/라포 스타티움 (4).png'
+import rapoStartium5 from '@/assets/projects/라포 스타티움/라포 스타티움 (5).png'
+import rapoStartium6 from '@/assets/projects/라포 스타티움/라포 스타티움 (6).png'
+import rapoStartium7 from '@/assets/projects/라포 스타티움/라포 스타티움 (7).png'
+import rapoStartium8 from '@/assets/projects/라포 스타티움/라포 스타티움 (8).png'
+import rapoStartium9 from '@/assets/projects/라포 스타티움/라포 스타티움 (9).png'
+import rapoStartium10 from '@/assets/projects/라포 스타티움/라포 스타티움 (10).png'
+import rapoStartium11 from '@/assets/projects/라포 스타티움/라포 스타티움 (11).png'
+import rapoStartium12 from '@/assets/projects/라포 스타티움/라포 스타티움 (12).png'
+import rapoStartium13 from '@/assets/projects/라포 스타티움/라포 스타티움 (13).png'
+import rapoStartium14 from '@/assets/projects/라포 스타티움/라포 스타티움 (14).png'
+import rapoStartium15 from '@/assets/projects/라포 스타티움/라포 스타티움 (15).png'
+import rapoStartium16 from '@/assets/projects/라포 스타티움/라포 스타티움 (16).png'
+import rapoStartium17 from '@/assets/projects/라포 스타티움/라포 스타티움 (17).png'
+import rapoStartium18 from '@/assets/projects/라포 스타티움/라포 스타티움 (18).png'
+
 const COMPONENT_NAME = 'projects'
 
 /**
@@ -321,6 +341,45 @@ const PROJECT_LIST: {
       rapoGame23,
     ],
   },
+  {
+    title: '라포라포 스타티움',
+    period: '2025.09 - 2026.01',
+    description: (<div style={{ whiteSpace: 'pre-line' }}>{`
+      자사 창업 교육 플랫폼에서 제공하는 콘텐츠인
+      '모의 투자 게임' 입니다.
+
+      학생들이 팀 단위로 자유롭게 만든
+      사업 계획서와 홈페이지를
+      AI가 여러 평가 요소들로 하여금
+      종합적으로 판단하게 하여,
+
+      학생들이 각 사업에 투자한 금액이 시간에 따라 어떻게 변동되는지를
+      추적할 수 있게 하였습니다.
+
+      AI 기능 연결 및 콘텐츠 개발 전담하였습니다.
+    `}</div>),
+    skills: ['nuxt3', 'typescript', 'openai','socket.io'],
+    images: [
+      // rapoStartium1,
+      rapoStartium2,
+      rapoStartium3,
+      rapoStartium4,
+      rapoStartium5,
+      rapoStartium6,
+      rapoStartium7,
+      rapoStartium8,
+      rapoStartium9,
+      rapoStartium10,
+      rapoStartium11,
+      rapoStartium12,
+      rapoStartium13,
+      rapoStartium14,
+      rapoStartium15,
+      rapoStartium16,
+      rapoStartium17,
+      rapoStartium18,
+    ],
+  },
 ]
 
 export default ({
@@ -388,7 +447,7 @@ export default ({
 
   return <>
     <div className={COMPONENT_NAME} id={COMPONENT_NAME}>
-      {_.map(PROJECT_LIST, (project, projectIndex) => {
+      {_.map([...PROJECT_LIST].reverse(), (project, projectIndex) => {
         const {
           title,
           period,
