@@ -358,7 +358,7 @@ const PROJECT_LIST: {
 
       AI 기능 연결 및 콘텐츠 개발 전담하였습니다.
     `}</div>),
-    skills: ['nuxt3', 'typescript', 'openai','socket.io'],
+    skills: ['nuxt3', 'typescript', 'openai', 'socket.io'],
     images: [
       // rapoStartium1,
       rapoStartium2,
@@ -381,6 +381,7 @@ const PROJECT_LIST: {
     ],
   },
 ]
+_.reverse(PROJECT_LIST)
 
 export default ({
 }: {
@@ -447,7 +448,7 @@ export default ({
 
   return <>
     <div className={COMPONENT_NAME} id={COMPONENT_NAME}>
-      {_.map([...PROJECT_LIST].reverse(), (project, projectIndex) => {
+      {_.map(PROJECT_LIST, (project, projectIndex) => {
         const {
           title,
           period,
