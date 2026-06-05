@@ -7,6 +7,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const REACT_BUILD_DIRNAME = 'react_build'
 
 const JEKYLL_ROOT_PATH = path.resolve(__dirname, '../docs')
+const REACT_ROOT_PATH = path.resolve(__dirname)
 const REACT_BUILD_PATH = path.resolve(JEKYLL_ROOT_PATH, REACT_BUILD_DIRNAME)
 
 module.exports = {
@@ -91,6 +92,10 @@ module.exports = {
             {
               source: path.join(REACT_BUILD_PATH, 'index.html'),
               destination: path.join(JEKYLL_ROOT_PATH, '_includes/react.html')
+            },
+            {
+              source: path.resolve(REACT_ROOT_PATH, 'public'),
+              destination: path.resolve(REACT_BUILD_PATH, 'public')
             },
           ],
         },
