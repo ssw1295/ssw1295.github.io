@@ -31,6 +31,9 @@ const SKILLS_WITH_MENTIONED: Record<Skill, boolean> = {
   aws: true,
   oauth: true,
   cron: true,
+  python: true,
+  selenium: true,
+  tkinter: true,
 }
 
 const mentionedSkills = _.compact(_.map(SKILLS_WITH_MENTIONED, (value, key) => {
