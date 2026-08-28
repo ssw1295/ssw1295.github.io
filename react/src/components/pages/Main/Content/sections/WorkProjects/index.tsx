@@ -119,7 +119,7 @@ import rapoStartium16 from '@/assets/projects/라포 스타티움/라포 스타�
 import rapoStartium17 from '@/assets/projects/라포 스타티움/라포 스타티움 (17).png'
 import rapoStartium18 from '@/assets/projects/라포 스타티움/라포 스타티움 (18).png'
 
-const COMPONENT_NAME = 'projects'
+const COMPONENT_NAME = 'work-projects'
 
 /**
  * 프로젝트 요소

@@ -27,4 +27,7 @@ export type Skill = (
   | 'aws'
   | 'oauth'
   | 'cron'
+  | 'python'
+  | 'selenium'
+  | 'tkinter'
 )

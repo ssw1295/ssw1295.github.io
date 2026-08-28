@@ -1,7 +1,8 @@
 import Profile from './sections/Profile/index'
 import Skills from './sections/Skills/index'
 import Career from './sections/Career/index'
-import Projects from './sections/Projects/index'
+import WorkProjects from './sections/WorkProjects/index'
+import SideProjects from './sections/SideProjects/index'
 import Contact from './sections/Contact/index'
 
 import SectionWrapper from './SectionWrapper/index'
@@ -21,8 +22,11 @@ export default ({
       <SectionWrapper title="Career">
         <Career />
       </SectionWrapper>
-      <SectionWrapper title="Projects">
-        <Projects />
+      <SectionWrapper title="Work Projects">
+        <WorkProjects />
+      </SectionWrapper>
+      <SectionWrapper title="Side Projects">
+        <SideProjects />
       </SectionWrapper>
       <SectionWrapper title="Skills">
         <Skills />

@@ -22,7 +22,8 @@ export default function Header({
   onChangeIsRaining: (isRaining: boolean) => void
 }) {
   const handleClickScrollToTarget = (title: string) => {
-    const titleValue = _.lowerCase(title)
+    // 하이픈은 살리고 소문자화만 적용
+    const titleValue = title.toLowerCase()
 
     const $sectionWrapper = $(`.section-wrapper`)
     const $targetElement = _.find($sectionWrapper, (section) => {
@@ -59,8 +60,11 @@ export default function Header({
           onClick={() => handleClickScrollToTarget('career')}
         >career/</button>
         <button
-          onClick={() => handleClickScrollToTarget('projects')}
-        >projects/</button>
+          onClick={() => handleClickScrollToTarget('work-projects')}
+        >works/</button>
+        <button
+          onClick={() => handleClickScrollToTarget('side-projects')}
+        >sides/</button>
         <button
           onClick={() => handleClickScrollToTarget('skills')}
         >skills/</button>
