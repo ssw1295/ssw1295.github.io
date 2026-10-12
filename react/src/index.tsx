@@ -1,10 +1,12 @@
 import ReactDOM from 'react-dom/client'
 import _ from 'lodash'
 
-import Main from './components/pages/Main'
+import HelloMain from './components/pages/Main'
 import Troll from './components/pages/Troll'
 import Entries from './components/pages/Entries'
 import Entry from './components/pages/Entry'
+
+import DaangnTrackerMain from './components/pages/DaangnTracker'
 
 import '@/scss/reset.scss'
 import '@/scss/base.scss'
@@ -20,6 +22,7 @@ import {
 const VALID_ROUTE_BASES: ValidRouteBase[] = [
   '',
   'hello',
+  'daangn-tracker',
   'entries',
   'entry',
 ]
@@ -81,7 +84,12 @@ const pageComponents: {
   },
   'hello': () => {
     return (
-      <Main />
+      <HelloMain />
+    )
+  },
+  'daangn-tracker': () => {
+    return (
+      <DaangnTrackerMain />
     )
   },
   'entries': () => {
