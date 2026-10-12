@@ -1,16 +1,169 @@
-.content {
-  .content {
-    width: 1200px;
-    margin: 0 auto;
+$tracker-background: #1a1c20;
+
+body:has(.daangn-tracker) {
+  background: $tracker-background;
+}
+
+.daangn-tracker {
+  min-height: 100vh;
+  background: $tracker-background;
+}
+
+.daangn-tracker .content {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: $tracker-background;
+  color: var(--text-color);
+
+  .panel {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 80px 120px;
+    border-radius: 0;
+    background: $tracker-background;
+    color: #f5f6f8;
+    box-sizing: border-box;
   }
 
-  .footer {
-    width: 1200px;
-    margin: 48px auto;
+  h1 {
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 700;
   }
 
-  .header {
-    width: 1200px;
-    margin: 0 auto;
+  .field {
+    display: block;
+    margin-bottom: 12px;
+
+    span {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: #b7bcc6;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 999px;
+      background: #2a2d33;
+      color: #fff;
+      font: inherit;
+      outline: none;
+
+      &::placeholder {
+        color: #8d93a0;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px #ff6f0f;
+      }
+    }
+  }
+
+  .filter {
+    margin-top: 20px;
+    padding-top: 8px;
+  }
+
+  .filter-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+
+  fieldset {
+    margin: 16px 0 0;
+    padding: 0;
+    border: 0;
+  }
+
+  legend {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+
+    input {
+      width: 16px;
+      height: 16px;
+      accent-color: #ff6f0f;
+    }
+  }
+
+  .text-button,
+  .search-button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .price-range {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+    align-items: center;
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 0;
+      border-radius: 12px;
+      background: #2a2d33;
+      color: #fff;
+      font: inherit;
+      outline: none;
+
+      &:focus {
+        box-shadow: 0 0 0 2px #ff6f0f;
+      }
+    }
+
+    span {
+      color: #8d93a0;
+    }
+  }
+
+  .text-button {
+    border: 0;
+    background: transparent;
+    color: #c5cad3;
+    font-size: 14px;
+  }
+
+  .search-button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px 16px;
+    border: 0;
+    border-radius: 12px;
+    background: #ff6f0f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .result {
+    margin: 16px 0 0;
+    color: #d5d8de;
+    font-size: 13px;
+    line-height: 1.5;
   }
 }
